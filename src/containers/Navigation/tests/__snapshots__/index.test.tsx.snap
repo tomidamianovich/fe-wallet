@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Navigation main with items 1`] = `
+<DocumentFragment>
+  <nav
+    class="fe-wallet__content__navigation"
+  >
+    <ul
+      class="fe-wallet__content__navigation__list"
+    >
+      <li>
+        <a
+          class="fe-wallet__content__navigation__list__item false"
+          href="/link 1"
+        >
+          link 1
+        </a>
+      </li>
+      <li>
+        <a
+          class="fe-wallet__content__navigation__list__item false"
+          href="/link 2"
+        >
+          link 2
+        </a>
+      </li>
+      <li>
+        <a
+          class="fe-wallet__content__navigation__list__item false"
+          href="/link 3"
+        >
+          link 3
+        </a>
+      </li>
+    </ul>
+  </nav>
+</DocumentFragment>
+`;
+
+exports[`renders Navigation main without items 1`] = `
+<DocumentFragment>
+  <nav
+    class="fe-wallet__content__navigation"
+  >
+    <ul
+      class="fe-wallet__content__navigation__list"
+    >
+      <li>
+        <a
+          aria-current="page"
+          class="fe-wallet__content__navigation__list__item fe-wallet__content__navigation__list__item--active"
+          href="/"
+        />
+      </li>
+    </ul>
+  </nav>
+</DocumentFragment>
+`;

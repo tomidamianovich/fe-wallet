@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders App main page 1`] = `
+<DocumentFragment>
+  <div
+    class="fe-wallet"
+  >
+    <header
+      class="fe-wallet__header"
+    >
+      <div
+        class="fe-wallet__header__logo-container"
+      >
+        <a
+          class=""
+          href="/panel"
+        >
+          <img
+            class="fe-wallet__header__logo-container__logo"
+            src="logo-brand.svg"
+          />
+        </a>
+      </div>
+    </header>
+    <div
+      class="fe-wallet__content"
+    >
+      <nav
+        class="fe-wallet__content__navigation"
+      >
+        <ul
+          class="fe-wallet__content__navigation__list"
+        >
+          <li>
+            <a
+              class="fe-wallet__content__navigation__list__item false"
+              href="/panel"
+            >
+              panel
+            </a>
+          </li>
+          <li>
+            <a
+              class="fe-wallet__content__navigation__list__item false"
+              href="/wallet"
+            >
+              wallet
+            </a>
+          </li>
+          <li>
+            <a
+              class="fe-wallet__content__navigation__list__item false"
+              href="/market-rates"
+            >
+              market-rates
+            </a>
+          </li>
+          <li>
+            <a
+              class="fe-wallet__content__navigation__list__item false"
+              href="/credit"
+            >
+              credit
+            </a>
+          </li>
+          <li>
+            <a
+              class="fe-wallet__content__navigation__list__item false"
+              href="/exchange"
+            >
+              exchange
+            </a>
+          </li>
+          <li>
+            <a
+              class="fe-wallet__content__navigation__list__item false"
+              href="/launchpad"
+            >
+              launchpad
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <header
+        class="fe-wallet__not-found"
+      >
+        Not Found - 404
+      </header>
+    </div>
+  </div>
+</DocumentFragment>
+`;

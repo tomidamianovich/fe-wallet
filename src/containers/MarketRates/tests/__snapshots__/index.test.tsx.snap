@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Market Rates main page 1`] = `
+<DocumentFragment>
+  <div
+    class="fe-wallet__market-rates"
+  >
+    MarketRates
+  </div>
+</DocumentFragment>
+`;
