@@ -1,0 +1,30 @@
+@import "../../../containers/App/styles/colours.scss";
+
+.fe-wallet {
+
+  &__header {
+    background-color: $primary-background-color;
+    height: 80px;
+    display: flex;
+    margin: 0;
+    padding: 0;
+
+    &__logo-container {
+      height: 80px;
+      width: 68px;
+      display: flex;
+      left: 0px;
+      top: 0px;
+      border-radius: 0px;
+      align-items: center;
+      justify-content: flex-start;
+      padding-left: 32px;
+
+      &__logo {
+        color: $primary-base-color;
+        height: 32.8px;
+        width: 68px;
+      }
+    }
+  }
+}

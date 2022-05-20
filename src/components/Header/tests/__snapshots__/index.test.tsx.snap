@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Exchange main page 1`] = `
+<DocumentFragment>
+  <header
+    class="fe-wallet__header"
+  >
+    <div
+      class="fe-wallet__header__logo-container"
+    >
+      <a
+        class=""
+        href="/panel"
+      >
+        <img
+          class="fe-wallet__header__logo-container__logo"
+          src="logo-brand.svg"
+        />
+      </a>
+    </div>
+  </header>
+</DocumentFragment>
+`;
