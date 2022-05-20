@@ -11,9 +11,9 @@ import {
   MarketRates,
   NotFound
 } from '../../containers';
+import navLinks from '../../store/links';
 
 export default function AppRouter() {
-  const navLinks = ['panel','wallet','market-rates','credit','exchange','launchpad']
   const LoadingMessage = () => <div>Loading..,</div>;
 
   return (

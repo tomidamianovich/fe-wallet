@@ -1,0 +1,62 @@
+.fe-wallet__content__navigation__list {
+  &__item {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin-top: 12px;
+
+    &__link {
+      color: black;
+      text-decoration: none;
+      font-size: 16px;
+      line-height: 16px;
+      letter-spacing: 0px;
+      text-align: left;
+      height: 48px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+
+      &__content {
+        display: flex;
+        height: 60px;
+        align-items: center;
+      }
+
+      .icon {
+        height: 14.12px;
+        width: 16px;
+        left: 0px;
+        top: 1.066680908203125px;
+        border-radius: 0px;
+        margin-left: 21px;
+        color: red;
+        margin-right: 12px;
+        path {
+          fill: black;
+        }
+      }
+
+      &--active {
+        font-weight: 700;  
+        border-left: 3px solid;
+        border-color:#7908FF;
+
+        .icon {
+          height: 14.12px;
+          width: 16px;
+          left: 0px;
+          top: 1.066680908203125px;
+          border-radius: 0px;
+          margin-left: 21px;
+          color: red;
+          margin-right: 12px;
+          path {
+            fill: #7908FF;
+          }
+        }
+      }
+    }
+  }
+}
