@@ -1,5 +1,4 @@
 import Header from '../components/Header'
-import Navigation from './Navigation';
 import Panel from './Panel';
 import Wallet from './Wallet';
 import Credit from './Credit';
@@ -10,7 +9,6 @@ import NotFound from './../components/NotFound';
 
 export {
   Header,
-  Navigation,
   Panel,
   Wallet,
   Credit,

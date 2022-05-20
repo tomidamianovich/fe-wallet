@@ -1,8 +1,8 @@
 import { Suspense } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Navigation from '../../components/Navigation';
+import Header from '../../components/Header';
 import {
-  Header, 
-  Navigation,
   Panel,
   Wallet,
   Credit,
