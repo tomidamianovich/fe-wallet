@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import NavItem from '../';
-import navLinks from '../../../store/links';
+import navLinks from '../../../utils/store/links';
 import { BrowserRouter } from 'react-router-dom';
 
 test('renders NavItem main page', () => {

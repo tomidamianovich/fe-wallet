@@ -1,4 +1,10 @@
-const navLinks = [
+type Link = {
+  name: string;
+  to: string;
+  icon: string;
+};
+
+const navLinks:Link[] = [
   {
     name: 'Panel',
     to: 'panel',
