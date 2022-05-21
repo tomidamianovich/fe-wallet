@@ -11,17 +11,20 @@ import {
   MarketRates,
   NotFound
 } from '../../containers';
-import navLinks from '../../store/links';
+import { NavLinkType, CombinedState } from '../../utils/type'
+import { useSelector } from 'react-redux';
 
 export default function AppRouter() {
-  const LoadingMessage = () => <div>Loading..,</div>;
+  const navLinks:NavLinkType  = useSelector((state:CombinedState) => state.NavLinkReducer);
+  
+  const LoadingMessage = () => <div>Loading...</div>;
 
   return (
     <BrowserRouter>
       <Header />
       <div className='fe-wallet__content'>
-        <Navigation links={navLinks} />
         <Suspense fallback={<LoadingMessage />}>
+          <Navigation links={navLinks} />
           <Routes>
             <Route path="/panel"  element={<Panel />} />
             <Route path="/wallet" element={<Wallet />} />

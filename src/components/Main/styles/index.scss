@@ -1,0 +1,27 @@
+@import "../../../containers/App/styles/colours.scss";
+@import "../../../containers/App/styles/responsiveness.scss";
+
+.fe-wallet__content__navigation {
+  background-color: $secondary-base-color;
+  width: 256px;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+  }
+
+  &__logout {
+    position: absolute;
+    bottom: 0;
+    padding: 25px 0;
+  }
+
+  @media screen and (max-width: $sm) {
+    display: none;
+  }
+}

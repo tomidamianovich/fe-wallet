@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import Icon from '../';
-import navLinks from '../../../store/links';
+import navLinks from '../../../utils/store/links';
 
 test('renders NavItem main page', () => {
   const {icon} = navLinks[0];
