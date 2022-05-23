@@ -6,26 +6,24 @@ export type CurrencyType = {
   symbol: string,
   decimals: number,
   type: string,
-  actions: [
-    {
+  actions: {
     action: string,
     enabled: boolean
-    }[],
-  ],
+  }[],
   url_images: {
     image_png: string,
     image_svg: string,
   },
-  color: string,
+  color: string | null,
   categories: any[],
   is_favorite: boolean
 };
 
 export type RateType = {
   ticker: string,
-  buy_rate: number,
-  sell_rate: number,
-  variation: number
+  buy_rate: string,
+  sell_rate: string,
+  variation: string
 };
 
 export type NavLinkType = any;

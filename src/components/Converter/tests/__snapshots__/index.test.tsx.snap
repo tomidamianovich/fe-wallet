@@ -1,0 +1,137 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Converter  with currencies and rates 1`] = `
+<DocumentFragment>
+  <div
+    class="fe-wallet__converter"
+  >
+    <input
+      aria-label="Cripto a convertir"
+      name="from_amount"
+      type="number"
+      value="0"
+    />
+    <select
+      aria-label="Seleccionar crypto origen"
+      id="from"
+      name="from"
+    >
+      <option
+        value="0"
+      >
+        BTC
+      </option>
+      <option
+        value="1"
+      >
+        ETH
+      </option>
+      <option
+        value="2"
+      >
+        USDC
+      </option>
+      <option
+        value="3"
+      >
+        LTC
+      </option>
+      <option
+        value="4"
+      >
+        DAI
+      </option>
+      <option
+        value="5"
+      >
+        AXS
+      </option>
+    </select>
+    <input
+      aria-label="Cripto convertida"
+      name="to_amount"
+      readonly=""
+      type="number"
+      value="0"
+    />
+    <select
+      aria-label="Seleccionar crypto destino"
+      id="to"
+      name="to"
+    >
+      <option
+        value="0"
+      >
+        BTC
+      </option>
+      <option
+        value="1"
+      >
+        ETH
+      </option>
+      <option
+        value="2"
+      >
+        USDC
+      </option>
+      <option
+        value="3"
+      >
+        LTC
+      </option>
+      <option
+        value="4"
+      >
+        DAI
+      </option>
+      <option
+        value="5"
+      >
+        AXS
+      </option>
+    </select>
+    <button
+      aria-label="Convertir"
+    >
+      Convertir
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`renders Converter  without currencies and rates 1`] = `
+<DocumentFragment>
+  <div
+    class="fe-wallet__converter"
+  >
+    <input
+      aria-label="Cripto a convertir"
+      name="from_amount"
+      type="number"
+      value="0"
+    />
+    <select
+      aria-label="Seleccionar crypto origen"
+      id="from"
+      name="from"
+    />
+    <input
+      aria-label="Cripto convertida"
+      name="to_amount"
+      readonly=""
+      type="number"
+      value="0"
+    />
+    <select
+      aria-label="Seleccionar crypto destino"
+      id="to"
+      name="to"
+    />
+    <button
+      aria-label="Convertir"
+    >
+      Convertir
+    </button>
+  </div>
+</DocumentFragment>
+`;

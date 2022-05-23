@@ -1,5 +1,6 @@
 import React from 'react';
 import { CurrencyType, RateType } from '../../utils/type';
+import Converter from '../Converter';
 import './styles/index.scss';
 
 type Props = {
@@ -10,11 +11,12 @@ type Props = {
 const Main: React.FC<Props> = ({
     currencies, 
     rates
-  }) => 
-    <main className="fe-wallet__main">
-      <p> Currencies Amount: {currencies.length}</p>
-      <p> Rates Amount: {rates.length}</p>
+  }) => {
+    const cryptoCurrencies = currencies?.filter(currency => currency.type === "CRYPTO");
+    return <main className="fe-wallet__main">
+      { cryptoCurrencies.length && <Converter currencies={cryptoCurrencies} rates={rates} />}
     </main>
+  }
 ;
 
 export default Main;
