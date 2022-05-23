@@ -4,8 +4,6 @@ exports[`renders Credit main page 1`] = `
 <DocumentFragment>
   <div
     class="fe-wallet__panel"
-  >
-    Panel
-  </div>
+  />
 </DocumentFragment>
 `;

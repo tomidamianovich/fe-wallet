@@ -1,17 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders Navigation main with items 1`] = `
-<DocumentFragment>
-  <main
-    class="fe-wallet__main"
-  />
-</DocumentFragment>
-`;
-
 exports[`renders Navigation main without items 1`] = `
 <DocumentFragment>
   <main
     class="fe-wallet__main"
-  />
+  >
+    0
+  </main>
 </DocumentFragment>
 `;

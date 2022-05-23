@@ -14,6 +14,8 @@ const Panel: React.FC<Props> = () => {
   const dispatch = useDispatch();
   const [isLoadingCurrenciesData, setLoadingCurrenciesData] = useState<boolean>(false);
   const [isLoadingRatesData, setLoadingRatesData] = useState<boolean>(false);
+  const [isErrorRatesData, setErrorRatesData] = useState<boolean>(false);
+  const [isErrorCurrenciesData, setErrorCurrenciesData] = useState<boolean>(false);
   const currencies:CurrencyType[]  = useSelector((state:CombinedState) => state.CurrencyReducer);
   const rates:RateType[]  = useSelector((state:CombinedState) => state.RateReducer);
 
@@ -23,7 +25,10 @@ const Panel: React.FC<Props> = () => {
       .then((data) => {
         dispatch(setCurrenciesData(data));
         setLoadingCurrenciesData(false);
-      });
+      }).catch((res) => {
+        setErrorCurrenciesData(true);
+        setLoadingCurrenciesData(false)
+      })
   }, [dispatch]);
 
   const fetchRatesData = useCallback( async() => {
@@ -32,18 +37,22 @@ const Panel: React.FC<Props> = () => {
       .then((data) => {
         dispatch(setRatesData(data));
         setLoadingRatesData(false);
-      });
+      }).catch((res) => {
+        setErrorRatesData(true);
+        setLoadingRatesData(false)
+      })
   }, [dispatch]);
   
   useEffect(() => {
     // Cheking if the info was not already loaded in the past.
-    !currencies.length && !isLoadingCurrenciesData && fetchCurrenciesData();
-    !rates?.length && !isLoadingRatesData && fetchRatesData();
+    !currencies?.length && !isLoadingCurrenciesData && !isErrorCurrenciesData && fetchCurrenciesData();
+    !rates?.length && !isLoadingRatesData  && !isErrorRatesData && fetchRatesData();
   }, [currencies, rates, fetchCurrenciesData, fetchRatesData, isLoadingCurrenciesData, isLoadingRatesData])
 
   return (
     <div className="fe-wallet__panel">
-      <Main currencies={currencies} rates={rates} />
+      { (isErrorCurrenciesData || isErrorRatesData) && <div>Error found</div>}
+      { currencies && rates && <Main currencies={currencies} rates={rates} /> }
     </div>
   )
 };
