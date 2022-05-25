@@ -36,7 +36,6 @@ const Converter: React.FC<Props> = ({
     const [fromCurrencyIndex, setFromCurrencyIndex] = useState<number>(0);
     const [toCurrencyIndex, setToCurrencyIndex] = useState<number>(1);
     const [fromAmount, setFromAmount] = useState<number>(0);
-    const [toAmount, setToAmount] = useState<number>(0);
     const [result, setResult] = useState<number>(0);
 
     const handlerFromCurrency = (e: React.ChangeEvent<HTMLInputElement>) =>  {
@@ -50,7 +49,6 @@ const Converter: React.FC<Props> = ({
     };
 
     const handlerFromAmount = (e: React.ChangeEvent<HTMLInputElement>) => setFromAmount(parseInt(e.target.value));
-    const handlerToAmount = (e: React.ChangeEvent<HTMLInputElement>) => setToAmount(parseInt(e.target.value));
 
     const handlerConversion = () => {
       const currencyTickerFrom = currencies[fromCurrencyIndex]?.ticker;
