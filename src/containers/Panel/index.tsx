@@ -47,7 +47,16 @@ const Panel: React.FC<Props> = () => {
     // Cheking if the info was not already loaded in the past.
     !currencies?.length && !isLoadingCurrenciesData && !isErrorCurrenciesData && fetchCurrenciesData();
     !rates?.length && !isLoadingRatesData  && !isErrorRatesData && fetchRatesData();
-  }, [currencies, rates, fetchCurrenciesData, fetchRatesData, isLoadingCurrenciesData, isLoadingRatesData])
+  }, [
+    currencies, 
+    rates, 
+    fetchCurrenciesData, 
+    fetchRatesData, 
+    isLoadingCurrenciesData, 
+    isLoadingRatesData,
+    isErrorCurrenciesData,
+    isErrorRatesData
+  ])
 
   return (
     <div className="fe-wallet__panel">
