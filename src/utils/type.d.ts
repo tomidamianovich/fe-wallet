@@ -26,43 +26,58 @@ export type RateType = {
   variation: string
 };
 
+export type BalanceType = {
+  ticker: string,
+  amount: number,
+  account_limit: number
+};
+
 export type NavLinkType = any;
 
 export type CurrencyState = CurrencyType[];
 export type RateState = RateType[];
 export type NavLinkState= NavLinkType[];
+export type BalanceState= BalanceType[];
 
 export type CurrencyAction = {
   type: string
-  payload: CurrencyType[]
+  payload: CurrencyState
 }
 
 export type RateAction = {
   type: string
-  payload: RateType[]
+  payload: RateState
 }
 
 export type NavLinkAction = {
   type: string
-  payload: NavLinkType[]
+  payload: NavLinkState
+}
+
+export type BalanceAction = {
+  type: string
+  payload: BalanceState
 }
 
 export type CurrencyDispatchType = (args: CurrencyAction) => CurrencyAction;
 export type RateDispatchType = (args: RateAction) => RateAction;
 export type NavLinkDispatchType = (args: RateAction) => NavLinkAction;
+export type BalanceDispatchType = (args: BalanceAction) => BalanceAction;
 
 // Combined Types
 
 export type CombinedState = {
   CurrencyReducer: CurrencyState,
   RateReducer: RateState,
-  NavLinkReducer: NavLinkState
+  NavLinkReducer: NavLinkState,
+  BalanceReducer: BalanceState
 }
 
 export type CombinedAction = {
   CurrencyReducer: CurrencyAction,
   RateReducer: RateAction,
-  NavLinkReducer: NavLinkAction
+  NavLinkReducer: NavLinkAction,
+  BalanceReducer: BalanceAction
 }
 
 export type CombinedDispatchType = (args: CombinedAction) => CombinedAction
