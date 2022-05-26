@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Greeting with balances 1`] = `
+<DocumentFragment>
+  <div
+    class="fe-wallet__greeting"
+  >
+    <div
+      class="fe-wallet__greeting__heading"
+    >
+      <h2
+        class="fe-wallet__greeting__heading__main"
+      >
+        Mi billetera
+      </h2>
+      <h5
+        class="fe-wallet__greeting__heading__sub"
+      >
+        En tu billetera vas a poder almacenar todas las criptomonedas que compres en ripio.
+      </h5>
+    </div>
+    <div
+      class="fe-wallet__greeting__balance-container"
+    >
+      98000
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`renders Greeting without balances 1`] = `
+<DocumentFragment>
+  <div
+    class="fe-wallet__greeting"
+  >
+    <div
+      class="fe-wallet__greeting__heading"
+    >
+      <h2
+        class="fe-wallet__greeting__heading__main"
+      >
+        Mi billetera
+      </h2>
+      <h5
+        class="fe-wallet__greeting__heading__sub"
+      >
+        En tu billetera vas a poder almacenar todas las criptomonedas que compres en ripio.
+      </h5>
+    </div>
+    <div
+      class="fe-wallet__greeting__balance-container"
+    />
+  </div>
+</DocumentFragment>
+`;

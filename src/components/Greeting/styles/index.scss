@@ -1,0 +1,22 @@
+@import "../../../containers/App/styles/colours.scss";
+@import "../../../containers/App/styles/responsiveness.scss";
+
+.fe-wallet__greeting {
+  display: flex;
+  justify-content: space-between;
+  &__heading {
+    &__main {
+      text-align: left;
+      margin-bottom: 0.5rem;
+    }
+    &__sub {
+      font-weight: 500;
+      margin-inline-start: 0.05rem;
+      margin-top: 0rem;
+      align-self: flex-start;
+    }
+  }
+  &__balance-container {
+    margin-top: 1.5rem;
+  }
+}
