@@ -13,6 +13,7 @@ exports[`renders Converter  with currencies and rates 1`] = `
     />
     <select
       aria-label="Seleccionar crypto origen"
+      class="fe-wallet__dropdown undefined"
       id="from"
       name="from"
     >
@@ -56,6 +57,7 @@ exports[`renders Converter  with currencies and rates 1`] = `
     />
     <select
       aria-label="Seleccionar crypto destino"
+      class="fe-wallet__dropdown undefined"
       id="to"
       name="to"
     >
@@ -112,6 +114,7 @@ exports[`renders Converter  without currencies and rates 1`] = `
     />
     <select
       aria-label="Seleccionar crypto origen"
+      class="fe-wallet__dropdown undefined"
       id="from"
       name="from"
     />
@@ -124,6 +127,7 @@ exports[`renders Converter  without currencies and rates 1`] = `
     />
     <select
       aria-label="Seleccionar crypto destino"
+      class="fe-wallet__dropdown undefined"
       id="to"
       name="to"
     />
