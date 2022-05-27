@@ -1,14 +1,17 @@
 import React from 'react';
-import { BalanceType } from '../../utils/type';
+import { BalanceType, CurrencyType } from '../../utils/type';
 import './styles/index.scss';
 import { PANEL } from '../../utils/constants';
+import BalanceSummary from '../BalanceSummary'
 
 type Props = {
-  balances: BalanceType[]
+  balances: BalanceType[],
+  currencies: CurrencyType[]
 };
 
 const Greeting: React.FC<Props> = ({
-    balances
+    balances,
+    currencies
   }) => {
     const { HEADING, SUBHEADING } = PANEL;
     return (
@@ -18,7 +21,7 @@ const Greeting: React.FC<Props> = ({
           <h5 className="fe-wallet__greeting__heading__sub">{ SUBHEADING }</h5>
         </div>
         <div className="fe-wallet__greeting__balance-container">
-          { balances.find(balance => balance.ticker === "ARS")?.amount }
+          <BalanceSummary balances={balances} currencies={currencies} />
         </div>
       </div>  
     )

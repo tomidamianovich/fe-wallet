@@ -1,33 +1,12 @@
 import React, { useState } from 'react';
 import { CurrencyType, RateType } from '../../utils/type';
+import Dropdown from '../Dropdown';
 import './styles/index.scss';
 
 type Props = {
   currencies: CurrencyType[],
   rates: RateType[]
 };
-
-type DropdownProps = { 
-  name: string,
-  ariaLabel: string,
-  handler: (e: any) => void,
-  currencies: CurrencyType[],
-  selectedIndex: number
-};
-
-const Dropdown: React.FC<DropdownProps> = ({ name, handler, currencies, selectedIndex, ariaLabel }) => 
-  <select 
-    name={name} 
-    id={name} 
-    onChange={handler}
-    value={selectedIndex} 
-    aria-label={ariaLabel}>
-    {currencies.map((currency: CurrencyType, index: number) => 
-      <option value={index} key={index}>
-        { currency.ticker } 
-      </option>
-    )}
-  </select>
 
 const Converter: React.FC<Props> = ({
     currencies, 
@@ -75,7 +54,7 @@ const Converter: React.FC<Props> = ({
             <Dropdown 
               name="from"
               handler={handlerFromCurrency} 
-              currencies={currencies} 
+              options={currencies} 
               selectedIndex={fromCurrencyIndex} 
               ariaLabel={"Seleccionar crypto origen"}
             />
@@ -93,7 +72,7 @@ const Converter: React.FC<Props> = ({
             <Dropdown 
               name="to" 
               handler={handlerToCurrency} 
-              currencies={currencies} 
+              options={currencies} 
               selectedIndex={toCurrencyIndex} 
               ariaLabel={"Seleccionar crypto destino"}
             />

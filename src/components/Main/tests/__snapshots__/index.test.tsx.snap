@@ -4,8 +4,6 @@ exports[`renders Main main without items 1`] = `
 <DocumentFragment>
   <main
     class="fe-wallet__main"
-  >
-    00
-  </main>
+  />
 </DocumentFragment>
 `;

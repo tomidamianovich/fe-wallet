@@ -16,9 +16,18 @@ const Main: React.FC<Props> = ({
     balances
   }) => {
     const cryptoCurrencies = currencies?.filter(currency => currency.type === "CRYPTO");
+    const fiatCurrencies = currencies?.filter(currency => currency.type === "FIAT");
     return <main className="fe-wallet__main">
-      { balances?.length && <Greeting balances={balances} />}
-      { cryptoCurrencies?.length && <Converter currencies={cryptoCurrencies} rates={rates} />}
+      { 
+        (balances?.length && fiatCurrencies?.length)
+        ? <Greeting balances={balances} currencies={fiatCurrencies} />
+        : null
+      }
+      { 
+        (cryptoCurrencies?.length && rates?.length) 
+        ? <Converter currencies={cryptoCurrencies} rates={rates} />
+        : null
+      }
     </main>
   }
 ;

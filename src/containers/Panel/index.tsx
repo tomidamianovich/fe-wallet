@@ -22,7 +22,7 @@ const Panel: React.FC<Props> = () => {
   const balances:BalanceType[]  = useSelector((state:CombinedState) => state.BalanceReducer);
   
   const fetchCurrenciesData = useCallback( async() => {
-    if (isLoadingCurrenciesData || !!currencies?.length ) return
+    if (isLoadingCurrenciesData || !!currencies?.length || isErrorCurrenciesData) return
     setLoadingCurrenciesData(true);
     setErrorCurrenciesData(false);
     requestHandler(ENDPOINTS?.CURRENCIES)
@@ -33,10 +33,10 @@ const Panel: React.FC<Props> = () => {
         setErrorCurrenciesData(true);
         setLoadingCurrenciesData(false);
       })
-  }, [dispatch, isLoadingCurrenciesData, currencies]);
+  }, [dispatch, isLoadingCurrenciesData, currencies, isErrorCurrenciesData]);
 
   const fetchRatesData = useCallback( async() => {
-    if (isLoadingRatesData || !!rates?.length ) return
+    if (isLoadingRatesData || !!rates?.length || isErrorRatesData) return
     setLoadingRatesData(true);
     setErrorBalanceData(false);
     requestHandler(ENDPOINTS?.RATES)
@@ -47,10 +47,10 @@ const Panel: React.FC<Props> = () => {
         setErrorRatesData(true);
         setLoadingRatesData(false)
       })
-  }, [dispatch, isLoadingRatesData, rates]);
+  }, [dispatch, isLoadingRatesData, rates, isErrorRatesData]);
 
   const fetchBalanceData = useCallback( async() => {
-    if (isLoadingBalanceData || !!balances?.length ) return
+    if (isLoadingBalanceData || !!balances?.length || isErrorBalanceData) return
     setLoadingBalanceData(true);
     setErrorBalanceData(false);
     requestHandler(ENDPOINTS?.BALANCES)
@@ -61,7 +61,7 @@ const Panel: React.FC<Props> = () => {
         setErrorBalanceData(true);
         setLoadingBalanceData(false)
       })
-  }, [dispatch, isLoadingBalanceData, balances]);
+  }, [dispatch, isLoadingBalanceData, balances, isErrorBalanceData]);
   
   useEffect(() => {
     // Cheking if the info was not already loaded in the past.
