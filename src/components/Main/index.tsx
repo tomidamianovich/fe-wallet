@@ -1,6 +1,7 @@
 import React from 'react';
 import { CurrencyType, RateType, BalanceType } from '../../utils/type';
 import Converter from '../Converter';
+import BalanceDetail from '../BalanceDetail';
 import Greeting from '../Greeting';
 import './styles/index.scss';
 
@@ -26,6 +27,11 @@ const Main: React.FC<Props> = ({
       { 
         (cryptoCurrencies?.length && rates?.length) 
         ? <Converter currencies={cryptoCurrencies} rates={rates} />
+        : null
+      }
+      { 
+        (cryptoCurrencies?.length && balances?.length) 
+        ? <BalanceDetail currencies={cryptoCurrencies} balances={balances} rates={rates}/>
         : null
       }
     </main>

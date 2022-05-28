@@ -1,32 +1,20 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import Greeting from '../index';
-import { balances, currencies } from '../../../utils/store';
+import BalanceDetail from '../index';
+import { balances, fiatCurrencies, currencies, rates } from '../../../utils/store';
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from 'react-redux';
 
 const store = createStore(()=>[], applyMiddleware());
 
-test('renders Greeting with balances', () => {
+test('renders BalanceDetail with balances', () => {
   const { asFragment } = render(
     <Provider store={store}>
-      <Greeting 
+      <BalanceDetail 
         balances={balances}
         currencies={currencies}
-        />
-    </Provider>
-  );
-  expect(asFragment()).toMatchSnapshot();
-});
-
-test('renders Greeting without balances', () => {
-  const { asFragment } = render(
-    <Provider store={store}>
-      <Greeting 
-        balances={[]}
-        currencies={[]}
+        rates={rates}
       />
     </Provider>
   );
   expect(asFragment()).toMatchSnapshot();
 });
-

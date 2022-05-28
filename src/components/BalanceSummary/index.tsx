@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
-import { BalanceType, CurrencyType } from '../../utils/type';
+import { BalanceType, CurrencyType, CombinedState } from '../../utils/type';
 import './styles/index.scss';
-import Dropdown from '../Dropdown'
+import Dropdown from '../Dropdown';
+import { useDispatch, useSelector } from 'react-redux';
+import { setCurrencyBalanceData } from "../../actions/currencyBalanceAction";
 
 type Props = {
   balances: BalanceType[],
@@ -13,13 +15,18 @@ const BalanceSummary: React.FC<Props> = ({
   balances,
   currencies
 }) => {
-  const [currentBalance, setCurrentBalance] = useState<BalanceType>(balances[0]);
+  const dispatch = useDispatch();
+  const currentBalance:BalanceType  = useSelector((state:CombinedState) => state.CurrentBalanceReducer);
   const [currentCurrencyIndex, setCurrentCurrencyIndex] = useState<number>(0);
 
   useEffect(()=> {
+    if (!currentBalance?.ticker) {
+      dispatch(setCurrencyBalanceData(balances[0]));
+      return
+    } 
     const currencyIndex = currencies.findIndex(currency => currency.ticker === currentBalance.ticker);
     currencyIndex >= 0 && setCurrentCurrencyIndex(currencyIndex);
-  }, [currentBalance, currencies]);
+  }, [currentBalance,currencies, balances, dispatch]);
 
 
   const handlerDropdown = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -27,7 +34,7 @@ const BalanceSummary: React.FC<Props> = ({
     const balance = balances.find(balance => balance.ticker === currencies[currencyIndex].ticker);
     if (!balance) return
     setCurrentCurrencyIndex(currencyIndex);
-    setCurrentBalance(balance);
+    dispatch(setCurrencyBalanceData(balance));
   };
 
   const getFormattedAmount = (amount: number, decimals: number):string => {
