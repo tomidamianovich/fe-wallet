@@ -33,7 +33,7 @@ exports[`renders Greeting with balances 1`] = `
         <span
           class="fe-wallet__balance__amount-desc"
         >
-          98000.00
+          NaN
         </span>
         <select
           aria-label="Seleccionar moneda para ver balance"

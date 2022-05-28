@@ -59,6 +59,11 @@ export type BalanceAction = {
   payload: BalanceState
 }
 
+export type CurrentBalanceAction = {
+  type: string
+  payload: BalanceType
+}
+
 export type CurrencyDispatchType = (args: CurrencyAction) => CurrencyAction;
 export type RateDispatchType = (args: RateAction) => RateAction;
 export type NavLinkDispatchType = (args: RateAction) => NavLinkAction;
@@ -70,14 +75,16 @@ export type CombinedState = {
   CurrencyReducer: CurrencyState,
   RateReducer: RateState,
   NavLinkReducer: NavLinkState,
-  BalanceReducer: BalanceState
+  BalanceReducer: BalanceState,
+  CurrentBalanceReducer: BalanceType
 }
 
 export type CombinedAction = {
   CurrencyReducer: CurrencyAction,
   RateReducer: RateAction,
   NavLinkReducer: NavLinkAction,
-  BalanceReducer: BalanceAction
+  BalanceReducer: BalanceAction,
+  CurrentBalanceReducer: CurrentBalanceAction
 }
 
 export type CombinedDispatchType = (args: CombinedAction) => CombinedAction

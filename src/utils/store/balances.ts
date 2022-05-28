@@ -4,7 +4,7 @@ const balances:BalanceType[] = [
   {
     "ticker": "ARS",
     "amount": 98000,
-    "account_limit": 10000000 
+    "account_limit": 10000000
   },
   {
     "ticker": "USD",
@@ -22,18 +22,33 @@ const balances:BalanceType[] = [
     "account_limit": 30 
   },
   {
-    "ticker": "DAI",
+    "ticker": "LTC",
     "amount": 1.23456,
     "account_limit": 30000 
   },
   {
-    "ticker": "RPC",
-    "amount": 1.23456,
+    "ticker": "SOL",
+    "amount": 0,
     "account_limit": 32820000 
   },
   {
-    "ticker": "USDC",
-    "amount": 1.23456,
+    "ticker": "DOT",
+    "amount": 0,
+    "account_limit": 300000 
+  },
+  {
+    "ticker": "ADA",
+    "amount": 0,
+    "account_limit": 300000 
+  },
+  {
+    "ticker": "XRP",
+    "amount": 0,
+    "account_limit": 300000 
+  },
+  {
+    "ticker": "DOGE",
+    "amount": 0,
     "account_limit": 300000 
   }
 ]

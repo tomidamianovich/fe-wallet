@@ -1,23 +1,32 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import BalanceSummary from '../index';
 import { balances, fiatCurrencies, currencies } from '../../../utils/store';
+import currentBalanceReducer from "../../../reducers/currentBalanceReducer"
+import { Provider } from 'react-redux';
+import { createStore } from "redux";
+
+const store = createStore(currentBalanceReducer);
 
 test('renders BalanceSummary with balances', () => {
   const { asFragment } = render(
-    <BalanceSummary 
-      balances={balances}
-      currencies={currencies}
-    />
+    <Provider store={store}>
+      <BalanceSummary 
+        balances={balances}
+        currencies={currencies}
+      />
+    </Provider>
   );
   expect(asFragment()).toMatchSnapshot();
 });
 
 test('renders BalanceSummary with balances and switching between currencies', async () => {
   render(
-    <BalanceSummary 
-      balances={balances}
-      currencies={fiatCurrencies}
-    />
+    <Provider store={store}>
+      <BalanceSummary 
+        balances={balances}
+        currencies={fiatCurrencies}
+      />
+    </Provider>
   );
   
   const currencySelector = screen.getByRole('combobox', { name: "Seleccionar moneda para ver balance" });
