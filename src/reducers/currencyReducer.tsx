@@ -1,15 +1,15 @@
 import * as actionTypes from "../actionTypes/CurrencyType"
-import { CurrencyType, CurrencyAction } from '../utils/type'
+import { CurrencyState, CurrencyAction } from '../utils/type'
 
-const initialState:CurrencyType[] = []
+const initialState:CurrencyState = []
 
 const reducer = (
-  state: CurrencyType[] = initialState,
+  state: CurrencyState = initialState,
   action: CurrencyAction
-): CurrencyType[] => {
+): CurrencyState => {
   switch (action.type) {
     case actionTypes.SET_CURRENCY:
-      const currencies:CurrencyType[] = action.payload
+      const currencies:CurrencyState = action.payload
       return currencies;
   }
   return state

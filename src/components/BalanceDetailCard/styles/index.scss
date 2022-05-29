@@ -1,3 +1,5 @@
+@import "../../../containers/App/styles/colours.scss";
+
 .fe-wallet__balance-detail {
   display: flex;
   flex-wrap: wrap;
@@ -15,7 +17,7 @@
     left: 0px;
     top: 0px;
     border-radius: 6px;
-    background: #FFFFFF;
+    background: $secondary-base-color;
     flex-grow: 0;
     flex-shrink: 0;
     display: flex;
@@ -34,7 +36,7 @@
       &__title {
         display: flex;
         justify-content: space-between;
-        color: #A5A7AF;
+        color: $secondary-text-color;
         font-size: 16px;
         font-weight: 400;
         line-height: 19px;
@@ -43,7 +45,7 @@
       }
       &__buy {
         background: none;
-        color: #7908FF;
+        color: $primary_color;
         font-size: 16px;
         border: none;
         padding: 0;
@@ -55,7 +57,7 @@
         .icon {
           padding-left: 5px;
           path {
-            fill: #7908FF;
+            fill: $primary_color;
           }
         }
       }
@@ -66,7 +68,7 @@
       justify-content: center;
       align-items: center;
       &__values {
-        color: #373744;
+        color: $primary-text-color;
         font-size: 32px;
         font-weight: 500;
         line-height: 32px;
@@ -80,7 +82,7 @@
     }
 
     &__current-currency {
-      color: #A5A7AF;
+      color: $secondary-text-color;
       font-size: 16px;
       font-weight: 400;
       line-height: 20px;

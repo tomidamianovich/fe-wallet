@@ -9,7 +9,19 @@ const PANEL = {
   SUBHEADING: "En tu billetera vas a poder almacenar todas las criptomonedas que compres en ripio.",
 }
 
+const TRANSACTIONS = {
+  HEADER: [
+    "Fecha",
+    "Tipo de Operación",
+    "Método",
+    "Estado",
+    "Comisión",
+    "Monto",
+  ]
+}
+
 export {
   ENDPOINTS,
-  PANEL
+  PANEL,
+  TRANSACTIONS
 }

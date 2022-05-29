@@ -32,12 +32,23 @@ export type BalanceType = {
   account_limit: number
 };
 
+export type TransactionType = {
+  date: Date,
+  action: "DEPOSIT" | "WITHDRAWAL" | "SEND" | "RECEIVE",
+  ticker: string,
+  via: string,
+  status: "PENDING" | "FAILURE" | "SUCCESS",
+  comision: number,
+  amount: number
+}
+
 export type NavLinkType = any;
 
 export type CurrencyState = CurrencyType[];
 export type RateState = RateType[];
-export type NavLinkState= NavLinkType[];
-export type BalanceState= BalanceType[];
+export type NavLinkState = NavLinkType[];
+export type BalanceState = BalanceType[];
+export type TransactionState = TransactionType[];
 
 export type CurrencyAction = {
   type: string
@@ -64,10 +75,16 @@ export type CurrentBalanceAction = {
   payload: BalanceType
 }
 
+export type TransactionsAction = {
+  type: string
+  payload: TransactionState
+}
+
 export type CurrencyDispatchType = (args: CurrencyAction) => CurrencyAction;
 export type RateDispatchType = (args: RateAction) => RateAction;
 export type NavLinkDispatchType = (args: RateAction) => NavLinkAction;
 export type BalanceDispatchType = (args: BalanceAction) => BalanceAction;
+export type TransactionDispatchType = (args: TransactionsAction) => TransactionsAction;
 
 // Combined Types
 
@@ -76,7 +93,8 @@ export type CombinedState = {
   RateReducer: RateState,
   NavLinkReducer: NavLinkState,
   BalanceReducer: BalanceState,
-  CurrentBalanceReducer: BalanceType
+  CurrentBalanceReducer: BalanceType,
+  TransactionsReducer: TransactionState
 }
 
 export type CombinedAction = {
@@ -84,7 +102,8 @@ export type CombinedAction = {
   RateReducer: RateAction,
   NavLinkReducer: NavLinkAction,
   BalanceReducer: BalanceAction,
-  CurrentBalanceReducer: CurrentBalanceAction
+  CurrentBalanceReducer: CurrentBalanceAction,
+  TransactionsReducer: TransactionsAction
 }
 
 export type CombinedDispatchType = (args: CombinedAction) => CombinedAction

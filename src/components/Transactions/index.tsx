@@ -1,0 +1,41 @@
+import React from 'react';
+import './styles/index.scss';
+import { useSelector } from 'react-redux';
+import { TransactionType, CombinedState } from '../../utils/type';
+import { TRANSACTIONS } from '../../utils/constants';
+
+type Props = {};
+
+const Transaction: React.FC<Props> = () => {
+  const transactions:TransactionType[]  = useSelector((state:CombinedState) => state.TransactionsReducer);
+  return(
+    <div className="fe-wallet__transactions">
+      <span>
+        Mis movimientos
+      </span>
+      <div className="fe-wallet__transactions__container">
+        <table>
+          <thead>
+            <tr>
+              { TRANSACTIONS.HEADER.map((title, index) => <th key={`${title}-${index}`}>{title}</th>)}
+            </tr>
+          </thead>
+          <tbody>
+            {transactions?.map(row => 
+              <tr>
+                <td>{row.date?.toLocaleDateString("es-ES")}</td>
+                <td>{row.action} {row.ticker}</td>
+                <td>{row.via}</td>
+                <td>{row.status}</td>
+                <td>{row.comision}</td>
+                <td>{row.amount}</td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  )
+};
+
+export default Transaction;

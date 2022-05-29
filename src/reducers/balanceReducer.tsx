@@ -1,15 +1,15 @@
 import * as actionTypes from "../actionTypes/BalanceType"
-import { BalanceType, BalanceAction } from '../utils/type'
+import { BalanceState, BalanceAction } from '../utils/type'
 
-const initialState:BalanceType[] = []
+const initialState:BalanceState = []
 
 const reducer = (
-  state: BalanceType[] = initialState,
+  state: BalanceState = initialState,
   action: BalanceAction
-): BalanceType[] => {
+): BalanceState => {
   switch (action.type) {
     case actionTypes.SET_BALANCE:
-      const balances:BalanceType[] = action.payload
+      const balances:BalanceState = action.payload
       return balances;
   }
   return state
