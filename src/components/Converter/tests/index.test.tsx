@@ -56,8 +56,8 @@ test('Testing Converter with currencies and rates', async () => {
   const convertirButton = screen.getByRole('button', { name: 'Convertir' });
   expect(convertirButton).toBeInTheDocument();
   fireEvent.click(convertirButton);
-  const [{sell_rate}] = rates.filter(rate => rate.ticker?.includes(selectedCryptoFrom) && rate.ticker?.includes('ARS'));
-  const [{buy_rate}] = rates.filter(rate => rate.ticker?.includes(selectedCryptoTo) && rate.ticker?.includes('ARS'));
+  const [{sell_rate}] = rates?.filter(rate => rate.ticker?.includes(selectedCryptoFrom) && rate.ticker?.includes('ARS'));
+  const [{buy_rate}] = rates?.filter(rate => rate.ticker?.includes(selectedCryptoTo) && rate.ticker?.includes('ARS'));
   const money = 10 * parseInt(sell_rate);
   const result = buy_rate ? money / parseInt(buy_rate) : 0;
   await waitFor(() => expect(inputTo).toHaveValue(result));

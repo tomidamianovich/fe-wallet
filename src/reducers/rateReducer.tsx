@@ -1,15 +1,15 @@
 import * as actionTypes from "../actionTypes/RateType"
-import { RateType, RateAction } from '../utils/type'
+import { RateAction, RateState } from '../utils/type'
 
-const initialState:RateType[] = []
+const initialState:RateState = []
 
 const reducer = (
-  state: RateType[] = initialState,
+  state: RateState = initialState,
   action: RateAction
-): RateType[] => {
+): RateState => {
   switch (action.type) {
     case actionTypes.SET_RATE:
-      const rates:RateType[] = action.payload;
+      const rates:RateState = action.payload;
       return rates;
   }
   return state

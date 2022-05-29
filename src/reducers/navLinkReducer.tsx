@@ -1,16 +1,16 @@
 import * as actionTypes from "../actionTypes/NavLinkType"
-import { NavLinkType, CurrencyAction } from '../utils/type';
+import { CurrencyAction, NavLinkState } from '../utils/type';
 import NavLinks from '../utils/store/links';
 
-const initialState:NavLinkType[] = NavLinks;
+const initialState:NavLinkState= NavLinks;
 
 const reducer = (
-  state: NavLinkType[] = initialState,
+  state: NavLinkState= initialState,
   action: CurrencyAction
-): NavLinkType[] => {
+): NavLinkState=> {
   switch (action.type) {
     case actionTypes.SET_NAV_LINKS:
-      const navLinks:NavLinkType[] = action.payload
+      const navLinks:NavLinkState= action.payload
       return navLinks;
   }
   return state

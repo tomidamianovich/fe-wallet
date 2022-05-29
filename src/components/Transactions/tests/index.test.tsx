@@ -1,14 +1,14 @@
 import { render } from '@testing-library/react';
-import Main from '../index';
+import Transaction from '../index';
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from 'react-redux';
 
 const store = createStore(()=>[], applyMiddleware());
 
-test('renders Main main without items', () => {
+test('renders Transaction with balances', () => {
   const { asFragment } = render(
     <Provider store={store}>
-      <Main currencies={[]} rates={[]} balances={[]} />
+      <Transaction />
     </Provider>
   );
   expect(asFragment()).toMatchSnapshot();

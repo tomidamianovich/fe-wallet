@@ -22,10 +22,10 @@ const BalanceDetail: React.FC<Props> = ({
   const [cryptosBalance, setCryptosBalance] = useState<BalanceWithCurrencyInfo[]>([]);
 
   useEffect(()=> {
-    const cryptoTickers = currencies.map(currency => currency.ticker);
-    const cryptosBalance = balances.reduce((acc:BalanceWithCurrencyInfo[], val: BalanceType) => {
+    const cryptoTickers = currencies?.map(currency => currency.ticker);
+    const cryptosBalance = balances?.reduce((acc:BalanceWithCurrencyInfo[], val: BalanceType) => {
       if (!(cryptoTickers.includes(val.ticker) && !!val.amount)) return acc
-      const currencyData:CurrencyType = currencies.filter(currency => currency.ticker === val.ticker)[0];
+      const currencyData:CurrencyType = currencies?.filter(currency => currency.ticker === val.ticker)[0];
       const { sell_rate } = rates.find(rate => rate.ticker === `${val.ticker}_${currentBalance?.ticker}`) ?? {sell_rate: "0"};
       acc.push({
         ...val, 
@@ -39,7 +39,7 @@ const BalanceDetail: React.FC<Props> = ({
 
   return(
     <div className="fe-wallet__balance-detail">
-      { cryptosBalance.map(balance => <BalanceDetailCard {...balance} key={balance.ticker} />) }
+      { cryptosBalance?.map(balance => <BalanceDetailCard {...balance} key={balance.ticker} />) }
     </div>
   )
 };

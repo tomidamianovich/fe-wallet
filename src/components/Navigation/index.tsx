@@ -17,7 +17,7 @@ const Navigation: React.FC<Props> = ({ links }) =>
     { 
       links && 
       <ul className="fe-wallet__content__navigation__list">
-        { links.map( (link, index) => <NavItem {...link} key={index} />) }
+        { links?.map( (link, index) => <NavItem {...link} key={index} />) }
       </ul> 
     }
     <div className="fe-wallet__content__navigation__logout">

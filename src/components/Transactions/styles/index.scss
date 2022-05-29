@@ -1,0 +1,54 @@
+@import "../../../containers/App/styles/colours.scss";
+
+.fe-wallet__transactions {
+  text-align: left;
+  margin: 2rem 0;
+
+  span {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+    color: $primary-text-color;
+  }
+
+  &__container {
+    background: $secondary-base-color;
+    margin: 1rem  auto;
+    table {
+      width: 95%;
+      border-collapse:collapse;
+      text-align: center;
+      
+      tr {
+        color: $primary-text-color;
+        font-weight: 400;
+  
+        &:not(:first-child):not(:last-child) {
+          border-bottom: 1px solid $primary-border-color;
+        }
+        
+      }
+  
+      td {
+        background: $secondary-base-color;
+        border: none;
+        color: $primary-text-color
+      }
+  
+      th {
+        color: $secondary-text-color;
+        font-weight: 400;
+      }
+  
+      tr, td {
+        height: 64px;
+        font-size: 16px;
+        line-height: 16px;
+        letter-spacing: 0px;
+        word-wrap: break-word;
+        max-width: 150px;
+      }
+  
+    }
+  }
+}

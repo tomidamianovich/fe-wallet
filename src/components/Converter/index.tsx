@@ -33,8 +33,8 @@ const Converter: React.FC<Props> = ({
       const currencyTickerFrom = currencies[fromCurrencyIndex]?.ticker;
       const currencyTickerTo = currencies[toCurrencyIndex]?.ticker;
       if (!currencyTickerFrom || !currencyTickerTo) return
-      const [{sell_rate}] = rates.filter(rate => rate.ticker?.includes(currencyTickerFrom) && rate.ticker?.includes('ARS'));
-      const [{buy_rate}] = rates.filter(rate => rate.ticker?.includes(currencyTickerTo) && rate.ticker?.includes('ARS'));
+      const [{sell_rate}] = rates?.filter(rate => rate.ticker?.includes(currencyTickerFrom) && rate.ticker?.includes('ARS'));
+      const [{buy_rate}] = rates?.filter(rate => rate.ticker?.includes(currencyTickerTo) && rate.ticker?.includes('ARS'));
       const money = fromAmount * parseInt(sell_rate);
       const result = buy_rate ? money / parseInt(buy_rate) : 0;
       setResult(result);

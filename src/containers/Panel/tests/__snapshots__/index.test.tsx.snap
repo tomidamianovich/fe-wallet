@@ -7,7 +7,44 @@ exports[`renders Credit main page 1`] = `
   >
     <main
       class="fe-wallet__main"
-    />
+    >
+      <div
+        class="fe-wallet__transactions"
+      >
+        <span>
+          Mis movimientos
+        </span>
+        <div
+          class="fe-wallet__transactions__container"
+        >
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Fecha
+                </th>
+                <th>
+                  Tipo de Operación
+                </th>
+                <th>
+                  Método
+                </th>
+                <th>
+                  Estado
+                </th>
+                <th>
+                  Comisión
+                </th>
+                <th>
+                  Monto
+                </th>
+              </tr>
+            </thead>
+            <tbody />
+          </table>
+        </div>
+      </div>
+    </main>
   </div>
 </DocumentFragment>
 `;
