@@ -1,0 +1,135 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Modal with 1 button 1`] = `
+<DocumentFragment>
+  <div
+    class="fe-wallet__modal"
+  >
+    <div
+      class="fe-wallet__modal__content"
+    >
+      <div
+        class="fe-wallet__modal__content__header"
+      >
+        <h2>
+          Header
+        </h2>
+        <span
+          class="fe-wallet__modal__content__header__close"
+        >
+          ×
+        </span>
+      </div>
+      <div
+        class="fe-wallet__modal__content__body"
+      >
+        <div
+          class="fe-wallet__modal__content__body__content"
+        >
+          <div>
+            Test
+          </div>
+        </div>
+        <div
+          class="fe-wallet__modal__content__body__buttons"
+        >
+          <button
+            aria-label="test"
+          >
+            Test
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`renders Modal with 2 buttons 1`] = `
+<DocumentFragment>
+  <div
+    class="fe-wallet__modal"
+  >
+    <div
+      class="fe-wallet__modal__content"
+    >
+      <div
+        class="fe-wallet__modal__content__header"
+      >
+        <h2>
+          Header
+        </h2>
+        <span
+          class="fe-wallet__modal__content__header__close"
+        >
+          ×
+        </span>
+      </div>
+      <div
+        class="fe-wallet__modal__content__body"
+      >
+        <div
+          class="fe-wallet__modal__content__body__content"
+        >
+          <div>
+            Test
+          </div>
+        </div>
+        <div
+          class="fe-wallet__modal__content__body__buttons"
+        >
+          <button
+            aria-label="test"
+          >
+            Test
+          </button>
+          <button
+            aria-label="tes 2t"
+          >
+            Test 2
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`renders Modal without buttons 1`] = `
+<DocumentFragment>
+  <div
+    class="fe-wallet__modal"
+  >
+    <div
+      class="fe-wallet__modal__content"
+    >
+      <div
+        class="fe-wallet__modal__content__header"
+      >
+        <h2>
+          Header
+        </h2>
+        <span
+          class="fe-wallet__modal__content__header__close"
+        >
+          ×
+        </span>
+      </div>
+      <div
+        class="fe-wallet__modal__content__body"
+      >
+        <div
+          class="fe-wallet__modal__content__body__content"
+        >
+          <div>
+            Test
+          </div>
+        </div>
+        <div
+          class="fe-wallet__modal__content__body__buttons"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
