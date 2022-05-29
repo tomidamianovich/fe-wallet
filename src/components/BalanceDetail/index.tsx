@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { BalanceType, CurrencyType, RateType, CombinedState } from '../../utils/type';
 import { useSelector } from 'react-redux';
 import BalanceDetailCard from '../BalanceDetailCard';
+import Modal from "../Modal"
 import './styles/index.scss';
 
 type Props = {
@@ -20,6 +21,7 @@ const BalanceDetail: React.FC<Props> = ({
 }) => {
   const currentBalance:BalanceType  = useSelector((state:CombinedState) => state.CurrentBalanceReducer);
   const [cryptosBalance, setCryptosBalance] = useState<BalanceWithCurrencyInfo[]>([]);
+  const [modalVisibility, setModalVisibility] = useState<boolean>(false);
 
   useEffect(()=> {
     const cryptoTickers = currencies?.map(currency => currency.ticker);
@@ -37,9 +39,40 @@ const BalanceDetail: React.FC<Props> = ({
     setCryptosBalance(cryptosBalance);
   }, [setCryptosBalance, balances, currencies, rates, currentBalance]);
 
+  const handleModalVisibility = () => setModalVisibility(!modalVisibility);
+
+  const ModalContent: Function = (): JSX.Element => {
+    return <div>
+      Test
+    </div>
+  };
+
   return(
     <div className="fe-wallet__balance-detail">
-      { cryptosBalance?.map(balance => <BalanceDetailCard {...balance} key={balance.ticker} />) }
+      { cryptosBalance?.map(balance =>
+        <BalanceDetailCard
+          key={balance.ticker}
+          handleModalVisibility={handleModalVisibility}
+          {...balance}
+        />
+      )}
+      { modalVisibility && 
+        <Modal 
+          handleModalVisibility={handleModalVisibility} 
+          header="Header"
+          content={<ModalContent />}
+          actions={[{
+            label:"Uno",
+            ariaLabel:"test",
+            handler: handleModalVisibility
+          },
+          {
+            label:"Dos",
+            ariaLabel:"test",
+            handler: handleModalVisibility
+          }]}
+        />
+      }
     </div>
   )
 };
