@@ -23,7 +23,7 @@
         color: $primary-text-color;
         font-weight: 400;
   
-        &:not(:first-child):not(:last-child) {
+        &:not(:last-child) {
           border-bottom: 1px solid $primary-border-color;
         }
         

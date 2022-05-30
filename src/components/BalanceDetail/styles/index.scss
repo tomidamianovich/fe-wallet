@@ -91,3 +91,15 @@
     }
   }
 }
+
+.fe-wallet__input {
+  &__messages {
+    font-size: 12px;
+    color: $primary-text-color;
+    &__text {
+      &--warning {
+        color: #dc3545;
+      }
+    }
+  }
+}

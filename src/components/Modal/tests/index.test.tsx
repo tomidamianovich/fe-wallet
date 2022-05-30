@@ -22,7 +22,7 @@ test('renders Modal with 1 button', () => {
   
   const { asFragment } = render(
     <Modal 
-      handleModalVisibility={mockFn} 
+      handleCloseButton={mockFn} 
       header="Header"
       content={ <div>Test</div> }
       actions={[buttons[0]]}
@@ -35,7 +35,7 @@ test('renders Modal with 2 buttons', () => {
   
   const { asFragment } = render(
     <Modal 
-      handleModalVisibility={mockFn} 
+      handleCloseButton={mockFn} 
       header="Header"
       content={ <div>Test</div> }
       actions={buttons}
@@ -48,7 +48,7 @@ test('renders Modal without buttons', () => {
   
   const { asFragment } = render(
     <Modal 
-      handleModalVisibility={mockFn} 
+      handleCloseButton={mockFn} 
       header="Header"
       content={ <div>Test</div> }
     />

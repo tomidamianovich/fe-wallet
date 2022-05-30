@@ -11,6 +11,7 @@ test('renders BalanceDetailCard with balances', () => {
   const { asFragment } = render(
     <Provider store={store}>
       <BalanceDetailCard 
+        handleModalVisibility={() => {}} 
         {...balances[0]}
         {...cryptoCurrencies[0]}
         ticker="ars"
