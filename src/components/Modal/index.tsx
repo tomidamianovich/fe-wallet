@@ -14,14 +14,14 @@ type Props = {
   header: string,
   content: ReactElement<{}>,
   actions?: ButtonProps[],
-  handleModalVisibility: () => void
+  handleCloseButton: () => void
 };
 
 const Modal: React.FC<Props> = ({
   header,
   content,
   actions,
-  handleModalVisibility
+  handleCloseButton
 }) => {
   return(
     <div className="fe-wallet__modal">
@@ -30,7 +30,7 @@ const Modal: React.FC<Props> = ({
           <h2>{header}</h2>
           <span
             className="fe-wallet__modal__content__header__close" 
-            onClick={handleModalVisibility}>
+            onClick={handleCloseButton}>
               &times;
           </span>
         </div>
@@ -41,6 +41,7 @@ const Modal: React.FC<Props> = ({
           <div className="fe-wallet__modal__content__body__buttons">
             { actions?.map( action => 
               <button
+                key={action.ariaLabel}
                 aria-label={action.ariaLabel} 
                 onClick={action.handler}
                 disabled={action.disabled}

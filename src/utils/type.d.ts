@@ -32,14 +32,18 @@ export type BalanceType = {
   account_limit: number
 };
 
+export type TransactionActionType = "DEPOSIT" | "WITHDRAWAL" | "SEND" | "RECEIVE" | "BUY" | "SWAP";
+export type TransactionStatusType = "PENDING" | "FAILURE" | "SUCCESS";
+
 export type TransactionType = {
   date: Date,
-  action: "DEPOSIT" | "WITHDRAWAL" | "SEND" | "RECEIVE",
+  action: TransactionActionType,
   ticker: string,
   via: string,
-  status: "PENDING" | "FAILURE" | "SUCCESS",
+  status: TransactionStatusType,
   comision: number,
-  amount: number
+  amount: number,
+  total: number
 }
 
 export type NavLinkType = any;

@@ -9,7 +9,7 @@ type Props =
   & CurrencyType 
   & { 
     sell_rate: string,
-    handleModalVisibility?: () => void
+    handleModalVisibility: () => void
   }
 
 const BalanceDetailCard : React.FC<Props> = ({

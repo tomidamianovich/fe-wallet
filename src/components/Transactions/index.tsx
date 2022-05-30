@@ -7,7 +7,7 @@ import { TRANSACTIONS } from '../../utils/constants';
 type Props = {};
 
 const Transaction: React.FC<Props> = () => {
-  const transactions:TransactionType[]  = useSelector((state:CombinedState) => state.TransactionsReducer);
+  const transactions:TransactionType[] = useSelector((state:CombinedState) => state.TransactionsReducer);
   return(
     <div className="fe-wallet__transactions">
       <span>
@@ -22,13 +22,13 @@ const Transaction: React.FC<Props> = () => {
           </thead>
           <tbody>
             {transactions?.map(row => 
-              <tr>
+              <tr key={`${row.action}-${row.ticker}`}>
                 <td>{row.date?.toLocaleDateString("es-ES")}</td>
-                <td>{row.action} {row.ticker}</td>
+                <td>{row.action} {row.amount} {row.ticker}</td>
                 <td>{row.via}</td>
                 <td>{row.status}</td>
                 <td>{row.comision}</td>
-                <td>{row.amount}</td>
+                <td>{row.total}</td>
               </tr>
             )}
           </tbody>
