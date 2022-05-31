@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { CurrencyType, RateType } from '../../utils/type';
 import Dropdown from '../Dropdown';
+import Icon from '../Icon';
 import './styles/index.scss';
 
 type Props = {
@@ -42,14 +43,7 @@ const Converter: React.FC<Props> = ({
 
     return (
       <div className="fe-wallet__converter">
-        <>
-          <input 
-            type="number" 
-            name="from_amount" 
-            onChange={handlerFromAmount} 
-            defaultValue={0} 
-            aria-label="Cripto a convertir"
-          />
+        <div className="fe-wallet__converter__crypto">
           {currencies && 
             <Dropdown 
               name="from"
@@ -59,15 +53,19 @@ const Converter: React.FC<Props> = ({
               ariaLabel={"Seleccionar crypto origen"}
             />
           }
-        </>
-        <>
           <input 
-            type="number"
-            name="to_amount" 
-            value={result} 
-            readOnly 
-            aria-label="Cripto convertida"
+            type="number" 
+            className="fe-wallet__converter__input"
+            name="from_amount" 
+            onChange={handlerFromAmount} 
+            defaultValue={0} 
+            aria-label="Cripto a convertir"
           />
+        </div>
+        <div className="fe-wallet__converter__icon">
+          <Icon icon="arrow-right" width={24} height={16}/>
+        </div>
+        <div className="fe-wallet__converter__crypto">
           {currencies && 
             <Dropdown 
               name="to" 
@@ -77,10 +75,19 @@ const Converter: React.FC<Props> = ({
               ariaLabel={"Seleccionar crypto destino"}
             />
           }
-        </>
+          <input 
+            type="number"
+            className="fe-wallet__converter__input"
+            name="to_amount" 
+            value={result} 
+            readOnly 
+            aria-label="Cripto convertida"
+          />
+        </div>
         <button 
           onClick={handlerConversion} 
           aria-label="Convertir"
+          className='fe-wallet__converter__submit'
         >
           Convertir
         </button>

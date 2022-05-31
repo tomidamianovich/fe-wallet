@@ -20,9 +20,9 @@ exports[`renders Navigation main with items 1`] = `
           >
             <svg
               class="icon"
-              height="15"
-              viewBox="0 0 16 15"
-              width="16"
+              height="16"
+              viewBox="0 0 15 16"
+              width="15"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -49,9 +49,9 @@ exports[`renders Navigation main with items 1`] = `
           >
             <svg
               class="icon"
-              height="15"
-              viewBox="0 0 16 15"
-              width="16"
+              height="16"
+              viewBox="0 0 15 16"
+              width="15"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -78,9 +78,9 @@ exports[`renders Navigation main with items 1`] = `
           >
             <svg
               class="icon"
-              height="15"
-              viewBox="0 0 16 15"
-              width="16"
+              height="16"
+              viewBox="0 0 15 16"
+              width="15"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -107,9 +107,9 @@ exports[`renders Navigation main with items 1`] = `
           >
             <svg
               class="icon"
-              height="15"
-              viewBox="0 0 16 15"
-              width="16"
+              height="16"
+              viewBox="0 0 15 16"
+              width="15"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -136,9 +136,9 @@ exports[`renders Navigation main with items 1`] = `
           >
             <svg
               class="icon"
-              height="15"
-              viewBox="0 0 16 15"
-              width="16"
+              height="16"
+              viewBox="0 0 15 16"
+              width="15"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -165,9 +165,9 @@ exports[`renders Navigation main with items 1`] = `
           >
             <svg
               class="icon"
-              height="15"
-              viewBox="0 0 16 15"
-              width="16"
+              height="16"
+              viewBox="0 0 15 16"
+              width="15"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -198,9 +198,9 @@ exports[`renders Navigation main with items 1`] = `
           >
             <svg
               class="icon"
-              height="15"
-              viewBox="0 0 16 15"
-              width="16"
+              height="16"
+              viewBox="0 0 15 16"
+              width="15"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -243,9 +243,9 @@ exports[`renders Navigation main without items 1`] = `
           >
             <svg
               class="icon"
-              height="15"
-              viewBox="0 0 16 15"
-              width="16"
+              height="16"
+              viewBox="0 0 15 16"
+              width="15"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path

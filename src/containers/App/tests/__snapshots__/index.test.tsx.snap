@@ -12,7 +12,8 @@ exports[`renders App main page 1`] = `
         class="fe-wallet__header__logo-container"
       >
         <a
-          class=""
+          aria-current="page"
+          class="active"
           href="/panel"
         >
           <img
@@ -44,9 +45,9 @@ exports[`renders App main page 1`] = `
               >
                 <svg
                   class="icon"
-                  height="15"
-                  viewBox="0 0 16 15"
-                  width="16"
+                  height="16"
+                  viewBox="0 0 15 16"
+                  width="15"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -63,11 +64,50 @@ exports[`renders App main page 1`] = `
           </li>
         </div>
       </nav>
-      <header
-        class="fe-wallet__not-found"
+      <div
+        class="fe-wallet__panel"
       >
-        Not Found - 404
-      </header>
+        <main
+          class="fe-wallet__main"
+        >
+          <div
+            class="fe-wallet__transactions"
+          >
+            <span>
+              Mis movimientos
+            </span>
+            <div
+              class="fe-wallet__transactions__container"
+            >
+              <table>
+                <thead>
+                  <tr>
+                    <th>
+                      Fecha
+                    </th>
+                    <th>
+                      Tipo de Operación
+                    </th>
+                    <th>
+                      Método
+                    </th>
+                    <th>
+                      Estado
+                    </th>
+                    <th>
+                      Comisión
+                    </th>
+                    <th>
+                      Monto
+                    </th>
+                  </tr>
+                </thead>
+                <tbody />
+              </table>
+            </div>
+          </div>
+        </main>
+      </div>
     </div>
   </div>
 </DocumentFragment>
