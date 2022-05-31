@@ -1,8 +1,8 @@
 import * as actionTypes from "../actionTypes/NavLinkType"
 import { CurrencyAction, NavLinkState } from '../utils/type';
-import NavLinks from '../utils/store/links';
+import { NAV_LINKS } from '../utils/constants';
 
-const initialState:NavLinkState= NavLinks;
+const initialState:NavLinkState= NAV_LINKS;
 
 const reducer = (
   state: NavLinkState= initialState,

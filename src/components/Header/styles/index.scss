@@ -11,19 +11,29 @@
 
     &__logo-container {
       height: 80px;
-      width: 68px;
+      width: 100%;
       display: flex;
       left: 0px;
       top: 0px;
       border-radius: 0px;
       align-items: center;
-      justify-content: flex-start;
-      padding-left: 32px;
+      justify-content: space-between;
+      padding: 0 32px;
 
       &__logo {
         color: $primary-base-color;
         height: 32.8px;
         width: 68px;
+      }
+    }
+    &__icons {
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      align-items: center;
+      svg.icon {
+        margin-left: 24px;
+        cursor: pointer;
       }
     }
   }
