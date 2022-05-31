@@ -13,8 +13,8 @@ const MaintenancePage: React.FC<Props> = ({
   const navLinks:NavLinkState  = useSelector((state:CombinedState) => state?.NavLinkReducer);
   
   const getPageName = () => {
-    const pageName:NavLinkType = navLinks?.find(page => page?.to === pageName?.toLocaleLowerCase());
-    return pageName?.name ?? ""
+    const page:NavLinkType = navLinks?.find(page => page?.to === pageName?.toLocaleLowerCase());
+    return page?.name ?? ""
   }
 
   return (
