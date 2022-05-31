@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import Navigation from '../../components/Navigation';
 import Header from '../../components/Header';
 import {
@@ -33,6 +33,7 @@ export default function AppRouter() {
             <Route path="/exchange" element={<Exchange />} />
             <Route path="/launchpad" element={<Launchpad />} />
             <Route path="*" element={<NotFound />} />
+            <Route path="/" element={<Navigate to="/panel" />}/>  
           </Routes>
         </Suspense>
       </div>

@@ -5,7 +5,7 @@ type Props = {};
 
 const NotFound: React.FC<Props> = () => 
   <header className="fe-wallet__not-found">
-    Not Found - 404
+    Page Not Found
   </header>
 ;
 

@@ -24,7 +24,7 @@ const Dropdown: React.FC<Props> = ({
     id={name} 
     onChange={handler}
     value={selectedIndex}
-    className={`fe-wallet__dropdown ${className}`}
+    className={`fe-wallet__dropdown ${className ?? ""}`}
     aria-label={ariaLabel}>
     {options?.map((currency: CurrencyType, index: number) => 
       <option value={index} key={index}>
