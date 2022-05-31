@@ -1,5 +1,6 @@
 import React from 'react';
 import { BalanceType, CurrencyType, CombinedState } from '../../utils/type';
+import { TRANSACTIONS } from '../../utils/constants';
 import { useSelector } from 'react-redux';
 import Icon from '../Icon';
 import './styles/index.scss';
@@ -9,7 +10,7 @@ type Props =
   & CurrencyType 
   & { 
     sell_rate: string,
-    handleModalVisibility: () => void
+    handleAction: () => void
   }
 
 const BalanceDetailCard : React.FC<Props> = ({
@@ -18,7 +19,7 @@ const BalanceDetailCard : React.FC<Props> = ({
   symbol,
   url_images,
   sell_rate,
-  handleModalVisibility
+  handleAction
 }) => {
   const currentBalance:BalanceType  = useSelector((state:CombinedState) => state.CurrentBalanceReducer);
 
@@ -30,8 +31,8 @@ const BalanceDetailCard : React.FC<Props> = ({
       <span className="fe-wallet__balance-detail__card__header__title">
         Cuenta {name}
       </span>
-      <button className="fe-wallet__balance-detail__card__header__buy" onClick={handleModalVisibility}>
-        Comprar
+      <button className="fe-wallet__balance-detail__card__header__buy" onClick={handleAction}>
+        { TRANSACTIONS.TYPES_TITLES.BUY }
         <Icon icon="more"/>
       </button>
     </div>

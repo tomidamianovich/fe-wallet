@@ -61,6 +61,18 @@
           }
         }
       }
+      &__action-selector {
+        display: flex;
+        background: #eaeaea;
+        top: 0;
+        right: 0;
+        border-radius: 6px;
+        box-shadow: 0 0 1px 0px black;
+        position: inherit;
+        flex-direction: column;
+        padding: 1rem;
+        align-items: flex-start;
+      }
     }
 
     &__info {
