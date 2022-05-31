@@ -5,7 +5,16 @@ exports[`renders Market Rates main page 1`] = `
   <div
     class="fe-wallet__market-rates"
   >
-    MarketRates
+    <div
+      class="fe-wallet__maintenance-page"
+    >
+      <h1>
+        Pagina en Mantenimiento
+      </h1>
+      <h3>
+        Oops! Estamos trabajando en la pagina . Ingrese nuevamente a esta seccion más tarde.
+      </h3>
+    </div>
   </div>
 </DocumentFragment>
 `;
