@@ -28,7 +28,7 @@ const Transaction: React.FC<Props> = () => {
                 <td>{row.via}</td>
                 <td>{row.status}</td>
                 <td>{row.comision}</td>
-                <td>{row.total}</td>
+                <td>{row.total?.toFixed(2)}</td>
               </tr>
             )}
           </tbody>

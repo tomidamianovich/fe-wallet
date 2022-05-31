@@ -16,7 +16,7 @@ exports[`renders BalanceDetailCard with balances 1`] = `
       <button
         class="fe-wallet__balance-detail__card__header__buy"
       >
-        Comprar
+        Compra
         <svg
           class="icon"
           height="15"

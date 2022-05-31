@@ -94,7 +94,12 @@ const DEFAULT_BALANCE = {
 }
 
 const COMISIONS = {
-  BUY: 0.003
+  BUY: 0.003,
+  DEPOSIT: 0,
+  WITHDRAWAL: 0.0004,
+  SEND: 0,
+  RECEIVE: 0,
+  SWAP: 0.00004
 }
 
 export {
