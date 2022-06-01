@@ -5,7 +5,7 @@ exports[`renders Exchange main page 1`] = `
   <header
     class="fe-wallet__not-found"
   >
-    Page Not Found
+    Pagina no encontrada.
   </header>
 </DocumentFragment>
 `;

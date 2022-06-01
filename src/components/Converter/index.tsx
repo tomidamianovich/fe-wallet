@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { WORDINGS } from '../../utils/constants';
 import { CurrencyType, RateType } from '../../utils/type';
 import Dropdown from '../Dropdown';
 import Icon from '../Icon';
@@ -46,20 +47,20 @@ const Converter: React.FC<Props> = ({
         <div className="fe-wallet__converter__crypto">
           {currencies && 
             <Dropdown 
-              name="from"
+              name={WORDINGS.CONVERTER.FROM.DROPDOWN.NAME}
               handler={handlerFromCurrency} 
               options={currencies} 
               selectedIndex={fromCurrencyIndex} 
-              ariaLabel={"Seleccionar crypto origen"}
+              ariaLabel={WORDINGS.CONVERTER.FROM.DROPDOWN.ARIA_LABEL}
             />
           }
           <input 
             type="number" 
             className="fe-wallet__converter__input"
-            name="from_amount" 
+            name={WORDINGS.CONVERTER.FROM.INPUT.NAME}
             onChange={handlerFromAmount} 
             defaultValue={0} 
-            aria-label="Cripto a convertir"
+            aria-label={WORDINGS.CONVERTER.FROM.INPUT.ARIA_LABEL}
           />
         </div>
         <div className="fe-wallet__converter__icon">
@@ -68,28 +69,28 @@ const Converter: React.FC<Props> = ({
         <div className="fe-wallet__converter__crypto">
           {currencies && 
             <Dropdown 
-              name="to" 
+              name={WORDINGS.CONVERTER.TO.DROPDOWN.NAME}
               handler={handlerToCurrency} 
               options={currencies} 
               selectedIndex={toCurrencyIndex} 
-              ariaLabel={"Seleccionar crypto destino"}
+              ariaLabel={WORDINGS.CONVERTER.TO.DROPDOWN.ARIA_LABEL}
             />
           }
           <input 
             type="number"
             className="fe-wallet__converter__input"
-            name="to_amount" 
+            name={WORDINGS.CONVERTER.TO.INPUT.NAME}
             value={result} 
             readOnly 
-            aria-label="Cripto convertida"
+            aria-label={WORDINGS.CONVERTER.TO.INPUT.ARIA_LABEL}
           />
         </div>
         <button 
           onClick={handlerConversion} 
-          aria-label="Convertir"
+          aria-label={WORDINGS.CONVERTER.BUTTON.ARIA_LABEL}
           className='fe-wallet__converter__submit'
         >
-          Convertir
+          {WORDINGS.CONVERTER.BUTTON.LABEL}
         </button>
       </div>  
     )

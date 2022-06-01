@@ -1,5 +1,3 @@
-// Currency and Rate
-
 export type CurrencyType = {
   ticker: string,
   name: string,
@@ -46,6 +44,29 @@ export type TransactionType = {
   total: number
 }
 
+export interface transaction {
+  ["DEPOSIT"]: TransactionActionType;
+  ["WITHDRAWAL"]: TransactionActionType;
+  ["SEND"]: TransactionActionType;
+  ["RECEIVE"]: TransactionActionType;
+  ["BUY"]: TransactionActionType;
+  ["SWAP"]: TransactionActionType;
+}
+export interface transactionTitle {
+  "DEPOSIT": string;
+  "WITHDRAWAL": string;
+  "SEND": string;
+  "RECEIVE": string;
+  "BUY": string;
+  "SWAP": string;
+}
+
+export interface transactionStatus {
+  ["PENDING"]: TransactionStatusType;
+  ["FAILURE"]: TransactionStatusType;
+  ["SUCCESS"]: TransactionStatusType;
+}
+
 export type NavLinkType = any;
 
 export type CurrencyState = CurrencyType[];
@@ -83,6 +104,8 @@ export type TransactionsAction = {
   type: string
   payload: TransactionState
 }
+
+export type BalanceWithCurrencyInfo = BalanceType & CurrencyType & { sell_rate: string } ;
 
 export type CurrencyDispatchType = (args: CurrencyAction) => CurrencyAction;
 export type RateDispatchType = (args: RateAction) => RateAction;

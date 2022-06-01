@@ -1,4 +1,4 @@
-import { TransactionActionType, TransactionStatusType } from '../utils/type';
+import { transaction, transactionTitle, transactionStatus } from '../utils/type';
 
 const ENDPOINTS = {
   CURRENCIES: 'http://localhost:3001/currencies',
@@ -11,35 +11,14 @@ const PANEL = {
   SUBHEADING: "En tu billetera vas a poder almacenar todas las criptomonedas que compres en ripio.",
 }
 
-interface transaction {
-  ["DEPOSIT"]: TransactionActionType;
-  ["WITHDRAWAL"]: TransactionActionType;
-  ["SEND"]: TransactionActionType;
-  ["RECEIVE"]: TransactionActionType;
-  ["BUY"]: TransactionActionType;
-  ["SWAP"]: TransactionActionType;
-}
-interface transactionTitle {
-  "DEPOSIT": string;
-  "WITHDRAWAL": string;
-  "SEND": string;
-  "RECEIVE": string;
-  "BUY": string;
-  "SWAP": string;
-}
-
-interface transactionStatus {
-  ["PENDING"]: TransactionStatusType;
-  ["FAILURE"]: TransactionStatusType;
-  ["SUCCESS"]: TransactionStatusType;
-}
-
 const TRANSACTIONS:{
+  HEADING: string,
   HEADER: string[],
   TYPES: transaction,
   TYPES_TITLES: transactionTitle,
   STATUS: transactionStatus
 } = {
+  HEADING: "Mis movimientos",
   HEADER: [
     "Fecha",
     "Tipo de Operación",
@@ -141,11 +120,104 @@ const NAV_LINKS:Link[] = [
   }
 ];
 
+const WORDINGS = {
+  BALANCE: {
+    DETAIL: {
+      INPUT: {
+        LABELS: {
+          TRANSACTION: "Seleccione el tipo de operacion a realizar",
+          AMOUNT: "Ingrese cantidad",
+          ARIA_LABEL : "Monto de la transacción"
+        },
+        MESSAGES: {
+          INSUFFICIENT_AMOUNT: "Dinero insuficiente",
+          AMOUNT_TO_DEBIT: "Monto a debitar",
+          AMOUNT_NEEDED: "Monto necesario",
+          ACTUAL_BALANCE: "Monto actual"
+        }
+      },
+      ACTIONS: {
+        CANCEL: {
+          LABEL: "Cancelar",
+          ARIA_LABEL: "Cancelar transacción",
+        },
+        CONFIRM: {
+          LABEL: "Confirmar",
+          ARIA_LABEL: "Confirmar transacción",
+        }
+      },
+      CARD: {
+        ACCOUNT: "Cuenta"
+      }
+    },
+    SUMMARY: {
+      DROPDOWN: {
+        ARIA_LABEL: "Seleccionar moneda para ver balance"
+      }
+    }
+  },
+  CONVERTER: {
+    FROM: {
+      DROPDOWN: {
+        ARIA_LABEL: "Seleccionar crypto origen",
+        NAME: "from"
+      },
+      INPUT: {
+        ARIA_LABEL: "Cripto a convertir",
+        NAME: "from_amount"
+      }
+    },
+    TO: {
+      DROPDOWN: {
+        ARIA_LABEL: "Seleccionar crypto destino",
+        NAME: "to"
+      },
+      INPUT: {
+        ARIA_LABEL: "Cripto convertida",
+        NAME: "to_amount"
+      }
+    },
+    BUTTON: {
+      ARIA_LABEL: "Convertir",
+      LABEL: "Convertir",
+    }
+  },
+  CURRENCIES: {
+    TYPES: {
+      FIAT: "FIAT",
+      CRYPTO: "CRYPTO"
+    }
+  },
+  MAINTENANCE: {
+    TITLE: "Pagina en Mantenimiento",
+    SUBTITLE: {
+      BEGINNING: "Oops! Estamos trabajando en la pagina ",
+      ENDING: ". Ingrese nuevamente a esta seccion más tarde."
+    }
+  },
+  NAVIGATION: {
+    NAV_ITEM: {
+      NAME: "Salir"
+    }
+  },
+  NOT_FOUND: "Pagina no encontrada.",
+  ERROR_FOUND: "Oops. Ocurrio un error",
+  PAGES: {
+    WALLET: "wallet",
+    CREDIT: "credit",
+    EXCHANGE: "exchange",
+    LAUNCHPAD: "launchpad",
+    MARKET_RATES: "market-rates",
+    PANEL: "panel",
+  }
+}
+
 export {
   ENDPOINTS,
   PANEL,
   TRANSACTIONS,
   DEFAULT_BALANCE,
   COMISIONS,
-  NAV_LINKS
+  NAV_LINKS,
+  WORDINGS
 }

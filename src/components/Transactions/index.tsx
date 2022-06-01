@@ -11,7 +11,7 @@ const Transaction: React.FC<Props> = () => {
   return(
     <div className="fe-wallet__transactions">
       <span>
-        Mis movimientos
+        {TRANSACTIONS.HEADING}
       </span>
       <div className="fe-wallet__transactions__container">
         <table>

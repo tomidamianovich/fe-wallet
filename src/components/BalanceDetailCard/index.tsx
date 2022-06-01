@@ -1,6 +1,6 @@
 import React from 'react';
 import { BalanceType, CurrencyType, CombinedState } from '../../utils/type';
-import { TRANSACTIONS } from '../../utils/constants';
+import { TRANSACTIONS, WORDINGS } from '../../utils/constants';
 import { useSelector } from 'react-redux';
 import Icon from '../Icon';
 import './styles/index.scss';
@@ -29,7 +29,7 @@ const BalanceDetailCard : React.FC<Props> = ({
   return <div className="fe-wallet__balance-detail__card">
     <div className="fe-wallet__balance-detail__card__header">
       <span className="fe-wallet__balance-detail__card__header__title">
-        Cuenta {name}
+        {WORDINGS.BALANCE.DETAIL.CARD.ACCOUNT} {name}
       </span>
       <button className="fe-wallet__balance-detail__card__header__buy" onClick={handleAction}>
         { TRANSACTIONS.TYPES_TITLES.BUY }

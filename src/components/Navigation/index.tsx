@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles/index.scss';
+import { WORDINGS } from '../../utils/constants';
 import NavItem from '../../components/NavItem';
 
 type Link = { 
@@ -21,7 +22,7 @@ const Navigation: React.FC<Props> = ({ links }) =>
       </ul> 
     }
     <div className="fe-wallet__content__navigation__logout">
-      <NavItem name="Salir" icon="logout" to="logout" />
+      <NavItem name={WORDINGS.NAVIGATION.NAV_ITEM.NAME} icon="logout" to="logout" />
     </div>
   </nav>
 ;
