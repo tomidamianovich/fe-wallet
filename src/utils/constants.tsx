@@ -1,9 +1,20 @@
 import { transaction, transactionTitle, transactionStatus } from '../utils/type';
 
 const ENDPOINTS = {
-  CURRENCIES: 'http://localhost:3001/currencies',
-  RATES: 'http://localhost:3001/rates',
-  BALANCES: 'http://localhost:3001/balance'
+  DEV: {
+    BASE_URL: "http://localhost:3001/",
+    CURRENCIES: "currencies",
+    RATES: "rates",
+    BALANCES: "balance",
+    EXT: ""
+  },
+  PROD: {
+    BASE_URL: "https://fe-wallet-2022-default-rtdb.firebaseio.com/",
+    CURRENCIES: "currencies",
+    RATES: "rates",
+    BALANCES: "balance",
+    EXT: ".json"
+  }
 }
 
 const PANEL = {
