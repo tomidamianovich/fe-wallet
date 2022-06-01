@@ -5,6 +5,7 @@ import './styles/index.scss';
 import Dropdown from '../Dropdown';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCurrencyBalanceData } from "../../actions/currencyBalanceAction";
+import { WORDINGS } from '../../utils/constants';
 
 type Props = {
   balances: BalanceType[],
@@ -54,7 +55,7 @@ const BalanceSummary: React.FC<Props> = ({
         handler={handlerDropdown} 
         options={currencies} 
         selectedIndex={currentCurrencyIndex}
-        ariaLabel={"Seleccionar moneda para ver balance"}
+        ariaLabel={WORDINGS.BALANCE.SUMMARY.DROPDOWN.ARIA_LABEL}
         className="fe-wallet__dropdown__balance"
       />
     </div>  

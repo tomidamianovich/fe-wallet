@@ -3,9 +3,10 @@ import { useEffect } from 'react';
 import { BalanceType, CurrencyType, RateType, CombinedState, TransactionActionType } from '../../utils/type';
 import { useDispatch, useSelector } from 'react-redux';
 import BalanceDetailCard from '../BalanceDetailCard';
+import InputMessages from '../InputMessages';
 import Modal from "../Modal"
 import './styles/index.scss';
-import { TRANSACTIONS, DEFAULT_BALANCE, COMISIONS } from '../../utils/constants';
+import { TRANSACTIONS, DEFAULT_BALANCE, COMISIONS, WORDINGS } from '../../utils/constants';
 import { addTransaction } from "../../actions/transactionAction";
 
 type Props = {
@@ -95,50 +96,6 @@ const BalanceDetail: React.FC<Props> = ({
     setTransactionAmount(value);
   }
 
-  const getTransactionAmountFormatted = (transactionAmount: string, sellRate:string) => {
-    const value = parseFloat(transactionAmount) * parseFloat(sellRate);
-    return value.toFixed(2);
-  }
-  
-  const InputMessages: Function = (): JSX.Element => {
-    const { sell_rate, account_limit } = transactionWipCurrency;
-    const isLimitedExceeded = account_limit && parseFloat(transactionAmount) > account_limit;
-    const isTransactionAffordable = account_limit && parseFloat(transactionAmount) * parseFloat(sell_rate) > currentBalance.amount;
-    const isBuyTransaction = transactionType === TRANSACTIONS.TYPES.BUY;
-    const total = isBuyTransaction 
-      ? getTransactionAmountFormatted(transactionAmount, sell_rate)
-      : transactionAmount;
-    return (
-      <div className="fe-wallet__input__messages">
-        { isLimitedExceeded && !isTransactionAffordable &&
-          <span className="fe-wallet__input__messages__text--warning">
-            {isBuyTransaction ? "Limite excedido" : "Monto no disponible"}
-          </span> 
-        }
-        { isTransactionAffordable && isBuyTransaction &&
-          <span className="fe-wallet__input__messages__text--warning">
-            Dinero insuficiente
-          </span> 
-        }
-        { isBuyTransaction && sell_rate && currentBalance?.ticker && transactionAmount && !isTransactionAffordable &&
-          <p className="fe-wallet__input__messages__text">
-            Monto a debitar: ${currentBalance?.ticker} {total}
-          </p> 
-        }
-        { isBuyTransaction && sell_rate && currentBalance?.ticker && transactionAmount && isTransactionAffordable &&
-          <p className="fe-wallet__input__messages__text">
-            Monto necesario: { isBuyTransaction ? currentBalance?.ticker : ""} {total}
-          </p> 
-        }
-        {  transactionWipCurrency?.amount &&
-          <p className="fe-wallet__input__messages__text">
-            Monto actual: {transactionWipCurrency?.ticker} {transactionWipCurrency?.amount}
-          </p> 
-        }
-      </div>
-    )
-  }
-
   const handlerDropdown = (e: any) => {
     setTransactionType(e.target.value);
     handleHeaderLabel(transactionWipCurrency, e.target.value);
@@ -164,7 +121,7 @@ const BalanceDetail: React.FC<Props> = ({
     <div className="fe-wallet__input">
       <div className="fe-wallet__input__transaction">
         <span className="fe-wallet__input__transaction__label">
-          Seleccione el tipo de operacion a realizar:
+          {WORDINGS.BALANCE.DETAIL.INPUT.LABELS.TRANSACTION}:
         </span>
         <select
           name="transaction_type"
@@ -180,7 +137,7 @@ const BalanceDetail: React.FC<Props> = ({
         </select>
       </div>
       <p className="fe-wallet__input__label">
-        Ingrese cantidad:
+        {WORDINGS.BALANCE.DETAIL.INPUT.LABELS.AMOUNT}:
       </p>
       <input
         type="string" 
@@ -188,10 +145,17 @@ const BalanceDetail: React.FC<Props> = ({
         autoFocus={true}
         value={transactionAmount}
         onChange={handlerTransactionAmount}
-        aria-label="Monto de la transacción"
+        aria-label={WORDINGS.BALANCE.DETAIL.INPUT.LABELS.ARIA_LABEL}
         className="fe-wallet__input__amount"
       />
-      { (transactionWipCurrency && transactionAmount) ? <InputMessages /> : null}
+      { (transactionWipCurrency && transactionAmount) 
+        ? <InputMessages 
+          transactionWipCurrency={transactionWipCurrency}
+          transactionType={transactionType}
+          transactionAmount={transactionAmount}
+          currentBalance={currentBalance}
+        /> 
+        : null}
     </div>
 
   return(
@@ -209,13 +173,13 @@ const BalanceDetail: React.FC<Props> = ({
           header={headerLabel}
           content={<ModalContent />}
           actions={[{
-            label:"Cancelar",
-            ariaLabel:"Cancelar transacción",
+            label: WORDINGS.BALANCE.DETAIL.ACTIONS.CANCEL.LABEL,
+            ariaLabel: WORDINGS.BALANCE.DETAIL.ACTIONS.CANCEL.ARIA_LABEL,
             handler: handleModalVisibility
           },
           {
-            label:"Confirmar",
-            ariaLabel:"Confirmar transacción",
+            label: WORDINGS.BALANCE.DETAIL.ACTIONS.CONFIRM.LABEL,
+            ariaLabel: WORDINGS.BALANCE.DETAIL.ACTIONS.CONFIRM.ARIA_LABEL,
             handler: handlePurchase,
             disabled: isPurchaseActionDisabled()
           }]}

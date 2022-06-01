@@ -1,6 +1,6 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import Converter from '../index';
-import { cryptoCurrencies, rates } from '../../../utils/store';
+import { cryptoCurrencies, rates } from '../../../utils/tests';
 
 test('renders Converter  with currencies and rates', () => {
   const { asFragment } = render(

@@ -1,6 +1,6 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import BalanceDetailCard from '../index';
-import { balances, cryptoCurrencies } from '../../../utils/store';
+import { balances, cryptoCurrencies } from '../../../utils/tests';
 import { createStore, applyMiddleware } from "redux";
 import currentBalanceReducer from "../../../reducers/currentBalanceReducer";
 import { Provider } from 'react-redux';

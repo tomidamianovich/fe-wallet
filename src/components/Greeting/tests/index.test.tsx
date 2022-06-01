@@ -1,6 +1,6 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import Greeting from '../index';
-import { balances, currencies } from '../../../utils/store';
+import { balances, currencies } from '../../../utils/tests';
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from 'react-redux';
 

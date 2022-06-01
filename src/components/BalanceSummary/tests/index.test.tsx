@@ -1,6 +1,6 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import BalanceSummary from '../index';
-import { balances, fiatCurrencies, currencies } from '../../../utils/store';
+import { balances, fiatCurrencies, currencies } from '../../../utils/tests';
 import currentBalanceReducer from "../../../reducers/currentBalanceReducer"
 import { Provider } from 'react-redux';
 import { createStore } from "redux";

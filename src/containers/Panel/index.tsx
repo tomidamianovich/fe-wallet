@@ -2,7 +2,7 @@ import React, { useState, useCallback, useEffect } from 'react';
 import './styles/index.scss';
 import { CurrencyType, RateType, BalanceType, CombinedState } from '../../utils/type';
 import { setCurrenciesData, setRatesData, setBalanceData } from "../../actions";
-import { ENDPOINTS } from '../../utils/constants';
+import { ENDPOINTS, WORDINGS } from '../../utils/constants';
 import { useSelector, useDispatch } from 'react-redux';
 import { requestHandler } from '../../utils/axios';
 import Main from '../../components/Main';
@@ -72,7 +72,7 @@ const Panel: React.FC<Props> = () => {
 
   return (
     <div className="fe-wallet__panel">
-      { (isErrorCurrenciesData || isErrorRatesData || isErrorBalanceData) && <div>Error found</div>}  
+      { (isErrorCurrenciesData || isErrorRatesData || isErrorBalanceData) && <div><span>{WORDINGS.ERROR_FOUND}</span></div>}  
       <Main 
         currencies={currencies} 
         rates={rates}
