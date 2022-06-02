@@ -5,6 +5,7 @@ import Converter from '../Converter';
 import BalanceDetail from '../BalanceDetail';
 import Transaction from '../Transactions';
 import Greeting from '../Greeting';
+import Spinner from '../../components/Spinner';
 import './styles/index.scss';
 
 type Props = {
@@ -25,17 +26,17 @@ const Main: React.FC<Props> = ({
       { 
         (balances?.length && fiatCurrencies?.length)
         ? <Greeting balances={balances} currencies={fiatCurrencies} />
-        : null
+        : <Spinner />
       }
       { 
         (cryptoCurrencies?.length && rates?.length) 
         ? <Converter currencies={cryptoCurrencies} rates={rates} />
-        : null
+        : <Spinner />
       }
       { 
         (cryptoCurrencies?.length && balances?.length) 
         ? <BalanceDetail currencies={cryptoCurrencies} balances={balances} rates={rates}/>
-        : null
+        : <Spinner />
       } 
       <Transaction />
     </main>

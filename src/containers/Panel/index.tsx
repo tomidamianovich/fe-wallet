@@ -25,7 +25,7 @@ const Panel: React.FC<Props> = () => {
     if (isLoadingCurrenciesData || !!currencies?.length || isErrorCurrenciesData) return
     setLoadingCurrenciesData(true);
     setErrorCurrenciesData(false);
-    requestHandler(ENDPOINTS?.CURRENCIES)
+    requestHandler(ENDPOINTS?.PROD.CURRENCIES)
       .then((data) => {
         dispatch(setCurrenciesData(data));
         setLoadingCurrenciesData(false);
@@ -39,7 +39,7 @@ const Panel: React.FC<Props> = () => {
     if (isLoadingRatesData || !!rates?.length || isErrorRatesData) return
     setLoadingRatesData(true);
     setErrorBalanceData(false);
-    requestHandler(ENDPOINTS?.RATES)
+    requestHandler(ENDPOINTS?.PROD.RATES)
       .then((data) => {
         dispatch(setRatesData(data));
         setLoadingRatesData(false);
@@ -53,7 +53,7 @@ const Panel: React.FC<Props> = () => {
     if (isLoadingBalanceData || !!balances?.length || isErrorBalanceData) return
     setLoadingBalanceData(true);
     setErrorBalanceData(false);
-    requestHandler(ENDPOINTS?.BALANCES)
+    requestHandler(ENDPOINTS?.PROD.BALANCES)
       .then((data) => {
         dispatch(setBalanceData(data));
         setLoadingBalanceData(false);
