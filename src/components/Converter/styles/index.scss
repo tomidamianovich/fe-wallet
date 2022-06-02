@@ -54,4 +54,18 @@
     text-align: center;
     cursor: pointer;
   }
+  @media screen and (max-width: 1000px) {
+    flex-wrap: wrap;
+    justify-content: center;
+    &__crypto {
+      width: 100%;
+      margin: 1rem 0;
+    }
+    &__icon {
+      display: none;
+    }
+    &__submit {
+      margin: 1rem;
+    }
+  }
 }
