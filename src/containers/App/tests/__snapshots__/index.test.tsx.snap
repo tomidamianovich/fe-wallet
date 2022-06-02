@@ -114,6 +114,27 @@ exports[`renders App main page 1`] = `
           class="fe-wallet__main"
         >
           <div
+            class="fe-wallet__spinner-container"
+          >
+            <div
+              class="fe-wallet__spinner-container__content"
+            />
+          </div>
+          <div
+            class="fe-wallet__spinner-container"
+          >
+            <div
+              class="fe-wallet__spinner-container__content"
+            />
+          </div>
+          <div
+            class="fe-wallet__spinner-container"
+          >
+            <div
+              class="fe-wallet__spinner-container__content"
+            />
+          </div>
+          <div
             class="fe-wallet__transactions"
           >
             <span>

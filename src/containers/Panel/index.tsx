@@ -4,6 +4,7 @@ import { CurrencyType, RateType, BalanceType, CombinedState } from '../../utils/
 import { setCurrenciesData, setRatesData, setBalanceData } from "../../actions";
 import { ENDPOINTS, WORDINGS } from '../../utils/constants';
 import { useSelector, useDispatch } from 'react-redux';
+import MaintenancePage from "../../components/MaintenancePage"
 import { requestHandler } from '../../utils/axios';
 import Main from '../../components/Main';
 
@@ -68,16 +69,19 @@ const Panel: React.FC<Props> = () => {
     fetchCurrenciesData();
     fetchRatesData();
     fetchBalanceData();
-  })
+  });
 
   return (
     <div className="fe-wallet__panel">
-      { (isErrorCurrenciesData || isErrorRatesData || isErrorBalanceData) && <div><span>{WORDINGS.ERROR_FOUND}</span></div>}  
-      <Main 
-        currencies={currencies} 
-        rates={rates}
-        balances={balances}
-      />
+      { 
+        (isErrorCurrenciesData || isErrorRatesData || isErrorBalanceData) 
+        ? <MaintenancePage pageName={WORDINGS.PAGES.PANEL} isError={true} />
+        : <Main 
+          currencies={currencies}
+          rates={rates}
+          balances={balances}
+        />
+      }  
     </div>
   )
 };

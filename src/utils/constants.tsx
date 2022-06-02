@@ -206,6 +206,13 @@ const WORDINGS = {
       ENDING: ". Ingrese nuevamente a esta seccion más tarde."
     }
   },
+  ERROR: {
+    TITLE: "Error encontrado",
+    SUBTITLE: {
+      BEGINNING: "Oops! Hemos encontrado un error en la pagina ",
+      ENDING: ". Ingrese nuevamente a esta seccion más tarde."
+    }
+  },
   NAVIGATION: {
     NAV_ITEM: {
       NAME: "Salir"
