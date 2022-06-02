@@ -14,6 +14,13 @@ const ENDPOINTS = {
     RATES: "rates",
     BALANCES: "balance",
     EXT: ".json"
+  },
+  RIPIO: {
+    BASE_URL: "https://app.ripio.com/api/v3/",
+    CURRENCIES: "currencies",
+    RATES: "rates",
+    BALANCES: "balance",
+    EXT: "/?country=AR"
   }
 }
 
