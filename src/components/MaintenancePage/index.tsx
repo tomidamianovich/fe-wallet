@@ -5,14 +5,16 @@ import {WORDINGS} from "../../utils/constants"
 import { CombinedState, NavLinkState, NavLinkType } from '../../utils/type';
 
 type Props = {
-  pageName: string
+  pageName: string,
+  isError?: boolean
 };
 
 const MaintenancePage: React.FC<Props> = ({
-  pageName
+  pageName,
+  isError = false
 }) => {
   const navLinks:NavLinkState  = useSelector((state:CombinedState) => state?.NavLinkReducer);
-  const { TITLE, SUBTITLE } = WORDINGS.MAINTENANCE;
+  const { TITLE, SUBTITLE } = isError ? WORDINGS.ERROR : WORDINGS.MAINTENANCE;
   const getPageName = () => {
     const page:NavLinkType = navLinks?.find(page => page?.to === pageName?.toLocaleLowerCase());
     return page?.name ?? ""
