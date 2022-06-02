@@ -16,12 +16,12 @@ const Greeting: React.FC<Props> = ({
     const { HEADING, SUBHEADING } = PANEL;
     return (
       <div className="fe-wallet__greeting">
+        <div className="fe-wallet__greeting__balance-container">
+          <BalanceSummary balances={balances} currencies={currencies} />
+        </div>
         <div className="fe-wallet__greeting__heading">
           <h2 className="fe-wallet__greeting__heading__main">{ HEADING }</h2>
           <h5 className="fe-wallet__greeting__heading__sub">{ SUBHEADING }</h5>
-        </div>
-        <div className="fe-wallet__greeting__balance-container">
-          <BalanceSummary balances={balances} currencies={currencies} />
         </div>
       </div>  
     )

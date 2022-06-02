@@ -3,17 +3,34 @@
 
 .fe-wallet__greeting {
   display: flex;
+  flex-direction: row-reverse;
   justify-content: space-between;
+
+  @media screen and (max-width: 1000px) {
+    flex-wrap: wrap;
+  }
+
   &__heading {
     &__main {
       text-align: left;
       margin-bottom: 0.5rem;
+      @media screen and (max-width: 500px) {
+        text-align: center;
+        margin: 2rem 0;
+      }
     }
     &__sub {
       font-weight: 500;
       margin-inline-start: 0.05rem;
       margin-top: 0rem;
-      align-self: flex-start;
+      width: 100;
+      text-align: left;
+      @media screen and (max-width: 500px) {
+        text-align: center;
+      }
+    }
+    @media screen and (max-width: 1000px) {
+      width: 100%;
     }
   }
   &__balance-container {
