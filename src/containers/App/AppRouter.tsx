@@ -32,9 +32,8 @@ export default function AppRouter() {
             <Route path="/credit" element={<Credit />} />
             <Route path="/exchange" element={<Exchange />} />
             <Route path="/launchpad" element={<Launchpad />} />
-            <Route path="/" element={<Navigate to="/panel" />}/>  z
-            <Route path="/fe-wallet" element={<Navigate to="/panel" />}/>  
             <Route path="*" element={<NotFound />} />
+            <Route path="/" element={<Navigate to="/panel" />}/>  
           </Routes>
         </Suspense>
       </div>
