@@ -23,6 +23,11 @@
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     animation-name: animatetop;
     animation-duration: 0.4s;
+
+    @media screen and (max-width: 500px) {
+      width: 90%;
+      margin: 0 5%;
+    }
     
     &__header {
       padding: 2px 16px;
