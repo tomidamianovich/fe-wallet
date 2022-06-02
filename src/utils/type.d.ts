@@ -67,6 +67,15 @@ export interface transactionStatus {
   ["SUCCESS"]: TransactionStatusType;
 }
 
+export type endpoint = {
+  BASE_URL: string,
+  CURRENCIES: string,
+  RATES: string,
+  BALANCES: string,
+  EXT: string
+}
+  
+
 export type NavLinkType = any;
 
 export type CurrencyState = CurrencyType[];
