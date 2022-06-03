@@ -7,6 +7,13 @@ import { Provider } from 'react-redux';
 
 const store = createStore(currentBalanceReducer);
 
+jest.mock('react-i18next', () => ({
+  withTranslation: () => (Component: any) => {
+    Component.defaultProps = {...Component.defaultProps, t: (translation: string) => translation};
+    return Component;
+  }
+}));
+
 test('renders BalanceDetailCard with balances', () => {
   const { asFragment } = render(
     <Provider store={store}>
