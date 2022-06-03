@@ -31,8 +31,8 @@ test('Testing Converter with currencies and rates', async () => {
     />
   );
 
-  const inputFrom = screen.getByRole('spinbutton', { name: 'Cripto a convertir' });
-  const inputTo = screen.getByRole('spinbutton', { name: 'Cripto convertida' });
+  const inputFrom = screen.getByRole('spinbutton', { name: 'converter.from.input.aria_label' });
+  const inputTo = screen.getByRole('spinbutton', { name: 'converter.to.input.aria_label' });
   expect(inputFrom).toBeInTheDocument();
   expect(inputFrom).toHaveValue(0);
   expect(inputTo).toBeInTheDocument();
@@ -40,8 +40,8 @@ test('Testing Converter with currencies and rates', async () => {
 
   const selectedCryptoFrom = cryptoCurrencies[0].ticker;
   const selectedCryptoTo = cryptoCurrencies[1].ticker;
-  const selectFrom = screen.getByRole('combobox', { name: 'Seleccionar crypto origen' });
-  const selectTo = screen.getByRole('combobox', { name: 'Seleccionar crypto destino' });
+  const selectFrom = screen.getByRole('combobox', { name: 'converter.from.dropdown.aria_label' });
+  const selectTo = screen.getByRole('combobox', { name: 'converter.to.dropdown.aria_label' });
   expect(selectFrom).toBeInTheDocument();
   expect(selectFrom).toHaveValue("0");
   expect(selectTo).toBeInTheDocument();
@@ -53,7 +53,7 @@ test('Testing Converter with currencies and rates', async () => {
   expect(inputFrom).toHaveValue(10);
   await waitFor(() => expect(inputTo).toHaveValue(0));
 
-  const convertirButton = screen.getByRole('button', { name: 'Convertir' });
+  const convertirButton = screen.getByRole('button', { name: 'converter.button.aria_label' });
   expect(convertirButton).toBeInTheDocument();
   fireEvent.click(convertirButton);
   const [{sell_rate}] = rates?.filter(rate => rate.ticker?.includes(selectedCryptoFrom) && rate.ticker?.includes('ARS'));

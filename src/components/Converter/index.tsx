@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
-import { WORDINGS } from '../../utils/constants';
 import { CurrencyType, RateType } from '../../utils/type';
 import Dropdown from '../Dropdown';
 import Icon from '../Icon';
+import { withTranslation, WithTranslation } from 'react-i18next';
 import './styles/index.scss';
 
 type Props = {
   currencies: CurrencyType[],
   rates: RateType[]
-};
+} & WithTranslation;
 
 const Converter: React.FC<Props> = ({
     currencies, 
-    rates
+    rates,
+    t
   }) => {
     const [fromCurrencyIndex, setFromCurrencyIndex] = useState<number>(0);
     const [toCurrencyIndex, setToCurrencyIndex] = useState<number>(1);
@@ -47,20 +48,20 @@ const Converter: React.FC<Props> = ({
         <div className="fe-wallet__converter__crypto">
           {currencies && 
             <Dropdown 
-              name={WORDINGS.CONVERTER.FROM.DROPDOWN.NAME}
+              name={t('converter.from.dropdown.name')}
               handler={handlerFromCurrency} 
               options={currencies} 
               selectedIndex={fromCurrencyIndex} 
-              ariaLabel={WORDINGS.CONVERTER.FROM.DROPDOWN.ARIA_LABEL}
+              ariaLabel={t('converter.from.dropdown.aria_label')}
             />
           }
           <input 
             type="number" 
             className="fe-wallet__converter__input"
-            name={WORDINGS.CONVERTER.FROM.INPUT.NAME}
+            name={t('converter.from.input.name')}
             onChange={handlerFromAmount} 
             defaultValue={0} 
-            aria-label={WORDINGS.CONVERTER.FROM.INPUT.ARIA_LABEL}
+            aria-label={t('converter.from.input.aria_label')}
           />
         </div>
         <div className="fe-wallet__converter__icon">
@@ -69,32 +70,32 @@ const Converter: React.FC<Props> = ({
         <div className="fe-wallet__converter__crypto">
           {currencies && 
             <Dropdown 
-              name={WORDINGS.CONVERTER.TO.DROPDOWN.NAME}
+              name={t('converter.to.dropdown.name')}
               handler={handlerToCurrency} 
               options={currencies} 
               selectedIndex={toCurrencyIndex} 
-              ariaLabel={WORDINGS.CONVERTER.TO.DROPDOWN.ARIA_LABEL}
+              ariaLabel={t('converter.to.dropdown.aria_label')}
             />
           }
           <input 
             type="number"
             className="fe-wallet__converter__input"
-            name={WORDINGS.CONVERTER.TO.INPUT.NAME}
+            name={t('converter.to.input.name')}
             value={result} 
             readOnly 
-            aria-label={WORDINGS.CONVERTER.TO.INPUT.ARIA_LABEL}
+            aria-label={t('converter.to.input.aria_label')}
           />
         </div>
         <button 
           onClick={handlerConversion} 
-          aria-label={WORDINGS.CONVERTER.BUTTON.ARIA_LABEL}
+          aria-label={t('converter.button.aria_label')}
           className='fe-wallet__converter__submit'
         >
-          {WORDINGS.CONVERTER.BUTTON.LABEL}
+          {t('converter.button.label')}
         </button>
       </div>  
     )
   }
 ;
 
-export default Converter;
+export default withTranslation()(Converter);

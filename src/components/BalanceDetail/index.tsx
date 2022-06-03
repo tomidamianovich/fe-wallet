@@ -6,21 +6,23 @@ import BalanceDetailCard from '../BalanceDetailCard';
 import InputMessages from '../InputMessages';
 import Modal from "../Modal"
 import './styles/index.scss';
-import { TRANSACTIONS, DEFAULT_BALANCE, COMISIONS, WORDINGS } from '../../utils/constants';
+import { TRANSACTIONS, DEFAULT_BALANCE, COMISIONS } from '../../utils/constants';
 import { addTransaction } from "../../actions/transactionAction";
+import { withTranslation, WithTranslation } from 'react-i18next';
 
 type Props = {
   balances: BalanceType[],
   currencies: CurrencyType[],
   rates: RateType[]
-};
+} & WithTranslation;
 
 type BalanceWithCurrencyInfo = BalanceType & CurrencyType & { sell_rate: string } ;
 
 const BalanceDetail: React.FC<Props> = ({
   balances,
   currencies,
-  rates
+  rates,
+  t
 }) => {
   const currentBalance:BalanceType  = useSelector((state:CombinedState) => state.CurrentBalanceReducer);
   const [cryptosBalance, setCryptosBalance] = useState<BalanceWithCurrencyInfo[]>();
@@ -117,11 +119,11 @@ const BalanceDetail: React.FC<Props> = ({
     }
   }
 
-  const ModalContent: Function = (): JSX.Element => 
+  const ModalContent: React.FC = (): JSX.Element => 
     <div className="fe-wallet__input">
       <div className="fe-wallet__input__transaction">
         <span className="fe-wallet__input__transaction__label">
-          {WORDINGS.BALANCE.DETAIL.INPUT.LABELS.TRANSACTION}:
+          {t('balance.detail.input.labels.transaction')}
         </span>
         <select
           name="transaction_type"
@@ -137,7 +139,7 @@ const BalanceDetail: React.FC<Props> = ({
         </select>
       </div>
       <p className="fe-wallet__input__label">
-        {WORDINGS.BALANCE.DETAIL.INPUT.LABELS.AMOUNT}:
+        {t('balance.detail.input.labels.amount')}
       </p>
       <input
         type="string" 
@@ -145,7 +147,7 @@ const BalanceDetail: React.FC<Props> = ({
         autoFocus={true}
         value={transactionAmount}
         onChange={handlerTransactionAmount}
-        aria-label={WORDINGS.BALANCE.DETAIL.INPUT.LABELS.ARIA_LABEL}
+        aria-label={t('balance.detail.input.labels.aria_label')}
         className="fe-wallet__input__amount"
       />
       { (transactionWipCurrency && transactionAmount) 
@@ -173,13 +175,13 @@ const BalanceDetail: React.FC<Props> = ({
           header={headerLabel}
           content={<ModalContent />}
           actions={[{
-            label: WORDINGS.BALANCE.DETAIL.ACTIONS.CANCEL.LABEL,
-            ariaLabel: WORDINGS.BALANCE.DETAIL.ACTIONS.CANCEL.ARIA_LABEL,
+            label: t('balance.actions.cancel.label'),
+            ariaLabel: t('balance.actions.cancel.aria_label'),
             handler: handleModalVisibility
           },
           {
-            label: WORDINGS.BALANCE.DETAIL.ACTIONS.CONFIRM.LABEL,
-            ariaLabel: WORDINGS.BALANCE.DETAIL.ACTIONS.CONFIRM.ARIA_LABEL,
+            label: t('balance.actions.confirm.aria_label'),
+            ariaLabel: t('balance.actions.confirm.aria_label'),
             handler: handlePurchase,
             disabled: isPurchaseActionDisabled()
           }]}
@@ -189,4 +191,4 @@ const BalanceDetail: React.FC<Props> = ({
   )
 };
 
-export default BalanceDetail;
+export default withTranslation()(BalanceDetail);

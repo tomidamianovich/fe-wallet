@@ -1,13 +1,13 @@
 import React from 'react';
 import './styles/index.scss';
-import { WORDINGS } from "../../utils/constants"
+import { withTranslation, WithTranslation } from 'react-i18next';
 
-type Props = {};
+type Props = {} & WithTranslation;
 
-const NotFound: React.FC<Props> = () => 
+const NotFound: React.FC<Props> = ({ t }) => 
   <header className="fe-wallet__not-found">
-    {WORDINGS.NOT_FOUND}
+    {t('not_found')}
   </header>
 ;
 
-export default NotFound;
+export default withTranslation()(NotFound);

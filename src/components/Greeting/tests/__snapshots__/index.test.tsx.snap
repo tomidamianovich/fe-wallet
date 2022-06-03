@@ -6,20 +6,6 @@ exports[`renders Greeting with balances 1`] = `
     class="fe-wallet__greeting"
   >
     <div
-      class="fe-wallet__greeting__heading"
-    >
-      <h2
-        class="fe-wallet__greeting__heading__main"
-      >
-        Mi billetera
-      </h2>
-      <h5
-        class="fe-wallet__greeting__heading__sub"
-      >
-        En tu billetera vas a poder almacenar todas las criptomonedas que compres en ripio.
-      </h5>
-    </div>
-    <div
       class="fe-wallet__greeting__balance-container"
     >
       <div
@@ -36,7 +22,7 @@ exports[`renders Greeting with balances 1`] = `
           NaN
         </span>
         <select
-          aria-label="Seleccionar moneda para ver balance"
+          aria-label="balance.summary.dropdown.aria_label"
           class="fe-wallet__dropdown fe-wallet__dropdown__balance"
           id="balance"
           name="balance"
@@ -154,15 +140,6 @@ exports[`renders Greeting with balances 1`] = `
         </select>
       </div>
     </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`renders Greeting without balances 1`] = `
-<DocumentFragment>
-  <div
-    class="fe-wallet__greeting"
-  >
     <div
       class="fe-wallet__greeting__heading"
     >
@@ -177,6 +154,15 @@ exports[`renders Greeting without balances 1`] = `
         En tu billetera vas a poder almacenar todas las criptomonedas que compres en ripio.
       </h5>
     </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`renders Greeting without balances 1`] = `
+<DocumentFragment>
+  <div
+    class="fe-wallet__greeting"
+  >
     <div
       class="fe-wallet__greeting__balance-container"
     >
@@ -192,12 +178,26 @@ exports[`renders Greeting without balances 1`] = `
           NaN
         </span>
         <select
-          aria-label="Seleccionar moneda para ver balance"
+          aria-label="balance.summary.dropdown.aria_label"
           class="fe-wallet__dropdown fe-wallet__dropdown__balance"
           id="balance"
           name="balance"
         />
       </div>
+    </div>
+    <div
+      class="fe-wallet__greeting__heading"
+    >
+      <h2
+        class="fe-wallet__greeting__heading__main"
+      >
+        Mi billetera
+      </h2>
+      <h5
+        class="fe-wallet__greeting__heading__sub"
+      >
+        En tu billetera vas a poder almacenar todas las criptomonedas que compres en ripio.
+      </h5>
     </div>
   </div>
 </DocumentFragment>

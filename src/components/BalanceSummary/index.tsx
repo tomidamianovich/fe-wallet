@@ -5,16 +5,17 @@ import './styles/index.scss';
 import Dropdown from '../Dropdown';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCurrencyBalanceData } from "../../actions/currencyBalanceAction";
-import { WORDINGS } from '../../utils/constants';
+import { withTranslation, WithTranslation } from 'react-i18next';
 
 type Props = {
   balances: BalanceType[],
   currencies: CurrencyType[]
-};
+} & WithTranslation;
 
 const BalanceSummary: React.FC<Props> = ({
   balances,
-  currencies
+  currencies,
+  t
 }) => {
   const dispatch = useDispatch();
   const currentBalance:BalanceType  = useSelector((state:CombinedState) => state.CurrentBalanceReducer);
@@ -55,10 +56,10 @@ const BalanceSummary: React.FC<Props> = ({
         handler={handlerDropdown} 
         options={currencies} 
         selectedIndex={currentCurrencyIndex}
-        ariaLabel={WORDINGS.BALANCE.SUMMARY.DROPDOWN.ARIA_LABEL}
+        ariaLabel={t('balance.summary.dropdown.aria_label')}
         className="fe-wallet__dropdown__balance"
       />
     </div>  
 )};
 
-export default BalanceSummary;
+export default withTranslation()(BalanceSummary);

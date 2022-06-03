@@ -1,8 +1,9 @@
 import React from 'react';
 import { BalanceType, CurrencyType, CombinedState } from '../../utils/type';
-import { TRANSACTIONS, WORDINGS } from '../../utils/constants';
+import { TRANSACTIONS } from '../../utils/constants';
 import { useSelector } from 'react-redux';
 import Icon from '../Icon';
+import { withTranslation, WithTranslation } from 'react-i18next';
 import './styles/index.scss';
 
 type Props = 
@@ -11,7 +12,7 @@ type Props =
   & { 
     sell_rate: string,
     handleAction: () => void
-  }
+  } & WithTranslation;
 
 const BalanceDetailCard : React.FC<Props> = ({
   amount,
@@ -19,7 +20,8 @@ const BalanceDetailCard : React.FC<Props> = ({
   symbol,
   url_images,
   sell_rate,
-  handleAction
+  handleAction,
+  t
 }) => {
   const currentBalance:BalanceType  = useSelector((state:CombinedState) => state.CurrentBalanceReducer);
 
@@ -29,7 +31,7 @@ const BalanceDetailCard : React.FC<Props> = ({
   return <div className="fe-wallet__balance-detail__card">
     <div className="fe-wallet__balance-detail__card__header">
       <span className="fe-wallet__balance-detail__card__header__title">
-        {WORDINGS.BALANCE.DETAIL.CARD.ACCOUNT} {name}
+        {t('balance.card.account')} {name}
       </span>
       <button className="fe-wallet__balance-detail__card__header__buy" onClick={handleAction}>
         { TRANSACTIONS.TYPES_TITLES.BUY }
@@ -48,4 +50,4 @@ const BalanceDetailCard : React.FC<Props> = ({
   </div>  
 }
 
-export default BalanceDetailCard;
+export default withTranslation()(BalanceDetailCard);

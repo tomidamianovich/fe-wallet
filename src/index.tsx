@@ -7,6 +7,7 @@ import { createStore, applyMiddleware } from "redux";
 import CombinedReducer from "./reducers/index";
 import thunk from "redux-thunk";
 import reportWebVitals from './reportWebVitals';
+import './i18n';
 
 const store= createStore(CombinedReducer, applyMiddleware(thunk))
 

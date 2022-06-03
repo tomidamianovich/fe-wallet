@@ -1,14 +1,14 @@
 import React from 'react';
 import MaintenancePage from "../../components/MaintenancePage";
-import { WORDINGS } from "../../utils/constants";
+import { withTranslation, WithTranslation } from 'react-i18next';
 import './styles/index.scss';
 
-type Props = {};
+type Props = {} & WithTranslation;
 
-const Credit: React.FC<Props> = () => 
+const Credit: React.FC<Props> = ({t}) => 
   <div className="fe-wallet__credit">
-    <MaintenancePage pageName={WORDINGS.PAGES.CREDIT} />
+    <MaintenancePage pageName={t('pages.credit')} />
   </div>
 ;
 
-export default Credit;
+export default withTranslation()(Credit);

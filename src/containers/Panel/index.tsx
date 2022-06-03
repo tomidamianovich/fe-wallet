@@ -2,15 +2,16 @@ import React, { useState, useCallback, useEffect } from 'react';
 import './styles/index.scss';
 import { CurrencyType, RateType, BalanceType, CombinedState } from '../../utils/type';
 import { setCurrenciesData, setRatesData, setBalanceData } from "../../actions";
-import { ENDPOINTS, WORDINGS } from '../../utils/constants';
+import { ENDPOINTS } from '../../utils/constants';
+import { withTranslation, WithTranslation } from 'react-i18next';
 import { useSelector, useDispatch } from 'react-redux';
 import MaintenancePage from "../../components/MaintenancePage"
 import { requestHandler } from '../../utils/axios';
 import Main from '../../components/Main';
 
-type Props = {};
+type Props = {} & WithTranslation;
 
-const Panel: React.FC<Props> = () => {
+const Panel: React.FC<Props> = ({t}) => {
   const dispatch = useDispatch();
   const [isLoadingCurrenciesData, setLoadingCurrenciesData] = useState<boolean>(false);
   const [isLoadingRatesData, setLoadingRatesData] = useState<boolean>(false);
@@ -26,7 +27,7 @@ const Panel: React.FC<Props> = () => {
     if (isLoadingCurrenciesData || !!currencies?.length || isErrorCurrenciesData) return
     setLoadingCurrenciesData(true);
     setErrorCurrenciesData(false);
-    requestHandler(ENDPOINTS?.PROD.CURRENCIES)
+    requestHandler(ENDPOINTS?.DEV.CURRENCIES)
       .then((data) => {
         dispatch(setCurrenciesData(data));
         setLoadingCurrenciesData(false);
@@ -40,7 +41,7 @@ const Panel: React.FC<Props> = () => {
     if (isLoadingRatesData || !!rates?.length || isErrorRatesData) return
     setLoadingRatesData(true);
     setErrorBalanceData(false);
-    requestHandler(ENDPOINTS?.PROD.RATES)
+    requestHandler(ENDPOINTS?.DEV.RATES)
       .then((data) => {
         dispatch(setRatesData(data));
         setLoadingRatesData(false);
@@ -54,7 +55,7 @@ const Panel: React.FC<Props> = () => {
     if (isLoadingBalanceData || !!balances?.length || isErrorBalanceData) return
     setLoadingBalanceData(true);
     setErrorBalanceData(false);
-    requestHandler(ENDPOINTS?.PROD.BALANCES)
+    requestHandler(ENDPOINTS?.DEV.BALANCES)
       .then((data) => {
         dispatch(setBalanceData(data));
         setLoadingBalanceData(false);
@@ -75,7 +76,7 @@ const Panel: React.FC<Props> = () => {
     <div className="fe-wallet__panel">
       { 
         (isErrorCurrenciesData || isErrorRatesData || isErrorBalanceData) 
-        ? <MaintenancePage pageName={WORDINGS.PAGES.PANEL} isError={true} />
+        ? <MaintenancePage pageName={t('pages.panel')} isError={true} />
         : <Main 
           currencies={currencies}
           rates={rates}
@@ -86,4 +87,4 @@ const Panel: React.FC<Props> = () => {
   )
 };
 
-export default Panel;
+export default withTranslation()(Panel);

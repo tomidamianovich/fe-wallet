@@ -9,10 +9,10 @@ exports[`renders Market Rates main page 1`] = `
       class="fe-wallet__maintenance-page"
     >
       <h1>
-        Pagina en Mantenimiento
+        maintenance.title
       </h1>
       <h3>
-        Oops! Estamos trabajando en la pagina . Ingrese nuevamente a esta seccion más tarde.
+        maintenance.subtitle.beginningmaintenance.subtitle.ending
       </h3>
     </div>
   </div>

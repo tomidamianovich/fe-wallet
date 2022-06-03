@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles/index.scss';
-import { WORDINGS } from '../../utils/constants';
+import { withTranslation, WithTranslation } from 'react-i18next';
 import NavItem from '../../components/NavItem';
 
 type Link = { 
@@ -11,9 +11,9 @@ type Link = {
 
 type Props = {
   links: Link[];
-};
+} & WithTranslation;
 
-const Navigation: React.FC<Props> = ({ links }) => 
+const Navigation: React.FC<Props> = ({ links, t }) => 
   <nav className="fe-wallet__content__navigation">
     { 
       links && 
@@ -22,9 +22,9 @@ const Navigation: React.FC<Props> = ({ links }) =>
       </ul> 
     }
     <div className="fe-wallet__content__navigation__logout">
-      <NavItem name={WORDINGS.NAVIGATION.NAV_ITEM.NAME} icon="logout" to="logout" />
+      <NavItem name={t('navigation.nav_item.name')} icon="logout" to="logout" />
     </div>
   </nav>
 ;
 
-export default Navigation;
+export default withTranslation()(Navigation);

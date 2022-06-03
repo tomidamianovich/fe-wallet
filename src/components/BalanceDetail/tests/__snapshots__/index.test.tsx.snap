@@ -14,7 +14,7 @@ exports[`renders BalanceDetail with balances 1`] = `
         <span
           class="fe-wallet__balance-detail__card__header__title"
         >
-          Cuenta Pesos
+          balance.card.account Pesos
         </span>
         <button
           class="fe-wallet__balance-detail__card__header__buy"
@@ -65,7 +65,7 @@ exports[`renders BalanceDetail with balances 1`] = `
         <span
           class="fe-wallet__balance-detail__card__header__title"
         >
-          Cuenta Bitcoin
+          balance.card.account Bitcoin
         </span>
         <button
           class="fe-wallet__balance-detail__card__header__buy"
@@ -116,7 +116,7 @@ exports[`renders BalanceDetail with balances 1`] = `
         <span
           class="fe-wallet__balance-detail__card__header__title"
         >
-          Cuenta Ethereum
+          balance.card.account Ethereum
         </span>
         <button
           class="fe-wallet__balance-detail__card__header__buy"
@@ -167,7 +167,7 @@ exports[`renders BalanceDetail with balances 1`] = `
         <span
           class="fe-wallet__balance-detail__card__header__title"
         >
-          Cuenta Litecoin
+          balance.card.account Litecoin
         </span>
         <button
           class="fe-wallet__balance-detail__card__header__buy"
