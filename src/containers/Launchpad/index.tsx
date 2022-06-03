@@ -1,14 +1,14 @@
 import React from 'react';
 import MaintenancePage from "../../components/MaintenancePage";
-import { WORDINGS } from "../../utils/constants";
+import { withTranslation, WithTranslation } from 'react-i18next';
 import './styles/index.scss';
 
-type Props = {};
+type Props = {} & WithTranslation;
 
-const Launchpad: React.FC<Props> = () => 
+const Launchpad: React.FC<Props> = ({ t }) => 
   <div className="fe-wallet__launchpad">
-    <MaintenancePage pageName={WORDINGS.PAGES.LAUNCHPAD} />
+    <MaintenancePage pageName={t('pages.launchpad')} />
   </div>
 ;
 
-export default Launchpad;
+export default withTranslation()(Launchpad);

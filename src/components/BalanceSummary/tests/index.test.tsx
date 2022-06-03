@@ -29,7 +29,7 @@ test('renders BalanceSummary with balances and switching between currencies', as
     </Provider>
   );
   
-  const currencySelector = screen.getByRole('combobox', { name: "Seleccionar moneda para ver balance" });
+  const currencySelector = screen.getByRole('combobox', { name: "balance.summary.dropdown.aria_label" });
   expect(currencySelector).toBeInTheDocument();
   expect(currencySelector).toHaveValue("0");
   expect(currencySelector).toHaveDisplayValue("ARS");

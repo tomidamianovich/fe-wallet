@@ -16,7 +16,7 @@ exports[`renders BalanceSummary with balances 1`] = `
       NaN
     </span>
     <select
-      aria-label="Seleccionar moneda para ver balance"
+      aria-label="balance.summary.dropdown.aria_label"
       class="fe-wallet__dropdown fe-wallet__dropdown__balance"
       id="balance"
       name="balance"

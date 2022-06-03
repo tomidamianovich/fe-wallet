@@ -6,10 +6,10 @@ exports[`renders MaintenancePage with name 1`] = `
     class="fe-wallet__maintenance-page"
   >
     <h1>
-      Pagina en Mantenimiento
+      maintenance.title
     </h1>
     <h3>
-      Oops! Estamos trabajando en la pagina . Ingrese nuevamente a esta seccion más tarde.
+      maintenance.subtitle.beginningmaintenance.subtitle.ending
     </h3>
   </div>
 </DocumentFragment>
@@ -21,10 +21,10 @@ exports[`renders MaintenancePage with name 2`] = `
     class="fe-wallet__maintenance-page"
   >
     <h1>
-      Pagina en Mantenimiento
+      maintenance.title
     </h1>
     <h3>
-      Oops! Estamos trabajando en la pagina . Ingrese nuevamente a esta seccion más tarde.
+      maintenance.subtitle.beginningmaintenance.subtitle.ending
     </h3>
   </div>
 </DocumentFragment>

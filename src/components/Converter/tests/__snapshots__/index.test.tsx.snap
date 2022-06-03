@@ -9,10 +9,10 @@ exports[`renders Converter  with currencies and rates 1`] = `
       class="fe-wallet__converter__crypto"
     >
       <select
-        aria-label="Seleccionar crypto origen"
+        aria-label="converter.from.dropdown.aria_label"
         class="fe-wallet__dropdown "
-        id="from"
-        name="from"
+        id="converter.from.dropdown.name"
+        name="converter.from.dropdown.name"
       >
         <option
           value="0"
@@ -46,9 +46,9 @@ exports[`renders Converter  with currencies and rates 1`] = `
         </option>
       </select>
       <input
-        aria-label="Cripto a convertir"
+        aria-label="converter.from.input.aria_label"
         class="fe-wallet__converter__input"
-        name="from_amount"
+        name="converter.from.input.name"
         type="number"
         value="0"
       />
@@ -74,10 +74,10 @@ exports[`renders Converter  with currencies and rates 1`] = `
       class="fe-wallet__converter__crypto"
     >
       <select
-        aria-label="Seleccionar crypto destino"
+        aria-label="converter.to.dropdown.aria_label"
         class="fe-wallet__dropdown "
-        id="to"
-        name="to"
+        id="converter.to.dropdown.name"
+        name="converter.to.dropdown.name"
       >
         <option
           value="0"
@@ -111,19 +111,19 @@ exports[`renders Converter  with currencies and rates 1`] = `
         </option>
       </select>
       <input
-        aria-label="Cripto convertida"
+        aria-label="converter.to.input.aria_label"
         class="fe-wallet__converter__input"
-        name="to_amount"
+        name="converter.to.input.name"
         readonly=""
         type="number"
         value="0"
       />
     </div>
     <button
-      aria-label="Convertir"
+      aria-label="converter.button.aria_label"
       class="fe-wallet__converter__submit"
     >
-      Convertir
+      converter.button.label
     </button>
   </div>
 </DocumentFragment>
@@ -138,15 +138,15 @@ exports[`renders Converter  without currencies and rates 1`] = `
       class="fe-wallet__converter__crypto"
     >
       <select
-        aria-label="Seleccionar crypto origen"
+        aria-label="converter.from.dropdown.aria_label"
         class="fe-wallet__dropdown "
-        id="from"
-        name="from"
+        id="converter.from.dropdown.name"
+        name="converter.from.dropdown.name"
       />
       <input
-        aria-label="Cripto a convertir"
+        aria-label="converter.from.input.aria_label"
         class="fe-wallet__converter__input"
-        name="from_amount"
+        name="converter.from.input.name"
         type="number"
         value="0"
       />
@@ -172,25 +172,25 @@ exports[`renders Converter  without currencies and rates 1`] = `
       class="fe-wallet__converter__crypto"
     >
       <select
-        aria-label="Seleccionar crypto destino"
+        aria-label="converter.to.dropdown.aria_label"
         class="fe-wallet__dropdown "
-        id="to"
-        name="to"
+        id="converter.to.dropdown.name"
+        name="converter.to.dropdown.name"
       />
       <input
-        aria-label="Cripto convertida"
+        aria-label="converter.to.input.aria_label"
         class="fe-wallet__converter__input"
-        name="to_amount"
+        name="converter.to.input.name"
         readonly=""
         type="number"
         value="0"
       />
     </div>
     <button
-      aria-label="Convertir"
+      aria-label="converter.button.aria_label"
       class="fe-wallet__converter__submit"
     >
-      Convertir
+      converter.button.label
     </button>
   </div>
 </DocumentFragment>

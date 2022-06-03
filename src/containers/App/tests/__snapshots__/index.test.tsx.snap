@@ -100,7 +100,7 @@ exports[`renders App main page 1`] = `
                   />
                 </svg>
                 <span>
-                  Salir
+                  navigation.nav_item.name
                 </span>
               </div>
             </a>

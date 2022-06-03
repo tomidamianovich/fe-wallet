@@ -1,14 +1,14 @@
 import React from 'react';
 import MaintenancePage from "../../components/MaintenancePage";
-import { WORDINGS } from "../../utils/constants";
+import { withTranslation, WithTranslation } from 'react-i18next';
 import './styles/index.scss';
 
-type Props = {};
+type Props = {} & WithTranslation;
 
-const Exchange: React.FC<Props> = () => 
+const Exchange: React.FC<Props> = ({ t }) => 
   <div className="fe-wallet__exchange">
-    <MaintenancePage pageName={WORDINGS.PAGES.EXCHANGE} />
+    <MaintenancePage pageName={t('pages.exchange')} />
   </div>
 ;
 
-export default Exchange;
+export default withTranslation()(Exchange);

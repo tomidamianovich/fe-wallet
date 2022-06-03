@@ -7,7 +7,7 @@ type responseType = {
 }
   
 const requestHandler = async (url:string): Promise<any> => {
-  const { BASE_URL, EXT } = ENDPOINTS.PROD;
+  const { BASE_URL, EXT } = ENDPOINTS.DEV;
   return new Promise((resolve, reject) => 
     axios.get(`${BASE_URL}${url}${EXT}`)
       .then((response: responseType) => resolve(response?.data))
