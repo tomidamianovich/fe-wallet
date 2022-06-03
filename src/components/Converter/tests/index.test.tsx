@@ -2,6 +2,13 @@ import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import Converter from '../index';
 import { cryptoCurrencies, rates } from '../../../utils/tests';
 
+jest.mock('react-i18next', () => ({
+  withTranslation: () => (Component: any) => {
+    Component.defaultProps = {...Component.defaultProps, t: (translation: string) => translation};
+    return Component;
+  }
+}));
+
 test('renders Converter  with currencies and rates', () => {
   const { asFragment } = render(
     <Converter 

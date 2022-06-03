@@ -3,6 +3,13 @@ import Navigation from '../index';
 import { BrowserRouter } from "react-router-dom";
 import { NAV_LINKS } from '../../../utils/constants';;
 
+jest.mock('react-i18next', () => ({
+  withTranslation: () => (Component: any) => {
+    Component.defaultProps = {...Component.defaultProps, t: (translation: string) => translation};
+    return Component;
+  }
+}));
+
 test('renders Navigation main without items', () => {
   const { asFragment } = render(<BrowserRouter><Navigation links={[]}/></BrowserRouter>);
   expect(asFragment()).toMatchSnapshot();
