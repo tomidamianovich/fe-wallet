@@ -30,6 +30,7 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
+    "env-cmd": "^10.1.0",
     "react-scripts": "5.0.1",
     "sass": "^1.52.1"
   },
@@ -40,7 +41,11 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "start:dev": "env-cmd -f ./.dev.env react-scripts start",
+    "build:dev": "env-cmd -f ./.dev.env npm run-script build",
+    "start:prod": "env-cmd -f ./.prod.env react-scripts start",
+    "build:prod": "env-cmd -f ./.prod.env npm run-script build"
   },
   "eslintConfig": {
     "extends": [

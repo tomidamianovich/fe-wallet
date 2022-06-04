@@ -1,12 +1,12 @@
 {
-  "user":{
+  "user.json":{
      "first_name":"Tomás",
      "last_name":"Damianovich",
      "email":"tomasdamianovich@gmail.com",
      "gender":"Male",
      "status":"Active"
   },
-  "balance":[
+  "balance.json":[
     {
       "ticker": "ARS",
       "amount": 98000,
@@ -58,7 +58,7 @@
       "account_limit": 300000 
     }
   ],
-  "currencies":[
+  "currencies.json":[
      {
         "ticker":"ARS",
         "name":"Pesos",
@@ -722,7 +722,7 @@
         "is_favorite":false
      }
   ],
-  "rates":[
+  "rates.json":[
      {
         "ticker":"DAI_ARS",
         "buy_rate":"214.67",
