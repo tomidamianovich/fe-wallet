@@ -20,9 +20,8 @@ const Dropdown: React.FC<Props> = ({
   ariaLabel,
   className,
   t
-}) => {
-  debugger
-  return <select
+}) => 
+  <select
     name={t(name)} 
     id={t(name)} 
     onChange={handler}
@@ -35,7 +34,5 @@ const Dropdown: React.FC<Props> = ({
       </option>
     )}
   </select>
-}
-  
 
 export default withTranslation()(Dropdown);
