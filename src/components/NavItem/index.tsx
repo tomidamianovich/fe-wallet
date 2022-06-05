@@ -6,7 +6,7 @@ import Icon from "../Icon";
 type Props = {
   to: string;
   name: string;
-  icon: any;
+  icon: string;
 };
 
 const NavItem: React.FC<Props> = ({to, name, icon}) => 
