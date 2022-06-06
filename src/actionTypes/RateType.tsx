@@ -1,1 +1,1 @@
-export const SET_RATE = "SET_RATE";
+export const SET_RATE = 'SET_RATE'

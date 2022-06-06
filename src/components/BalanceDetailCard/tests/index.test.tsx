@@ -1,24 +1,30 @@
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import BalanceDetailCard from '../index';
-import { balances, cryptoCurrencies } from '../../../utils/tests';
-import { createStore, applyMiddleware } from "redux";
-import currentBalanceReducer from "../../../reducers/currentBalanceReducer";
-import { Provider } from 'react-redux';
+import { ComponentType } from 'react'
+import { render } from '@testing-library/react'
+import BalanceDetailCard from '../index'
+import { balances, cryptoCurrencies } from '../../../utils/tests'
+import { createStore } from 'redux'
+import currentBalanceReducer from '../../../reducers/currentBalanceReducer'
+import { Provider } from 'react-redux'
 
-const store = createStore(currentBalanceReducer);
+const store = createStore(currentBalanceReducer)
+
+const mockFn = jest.fn().mockImplementationOnce(() => Promise.resolve())
 
 jest.mock('react-i18next', () => ({
-  withTranslation: () => (Component: any) => {
-    Component.defaultProps = {...Component.defaultProps, t: (translation: string) => translation};
-    return Component;
-  }
-}));
+  withTranslation: () => (Component: ComponentType) => {
+    Component.defaultProps = {
+      ...Component.defaultProps,
+      t: (translation: string) => translation,
+    }
+    return Component
+  },
+}))
 
 test('renders BalanceDetailCard with balances', () => {
   const { asFragment } = render(
     <Provider store={store}>
-      <BalanceDetailCard 
-        handleAction={() => {}} 
+      <BalanceDetailCard
+        handleAction={mockFn}
         {...balances[0]}
         {...cryptoCurrencies[0]}
         ticker="ars"
@@ -26,7 +32,7 @@ test('renders BalanceDetailCard with balances', () => {
         amount={1}
         account_limit={1}
       />
-    </Provider>
-  );
-  expect(asFragment()).toMatchSnapshot();
-});
+    </Provider>,
+  )
+  expect(asFragment()).toMatchSnapshot()
+})

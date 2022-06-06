@@ -1,21 +1,21 @@
-import React, { ReactElement } from 'react';
-import './styles/index.scss';
+import React, { ReactElement } from 'react'
+import './styles/index.scss'
 
 type ButtonProps = {
-  label: string,
-  ariaLabel: string,
-  handler: () => void,
-  backgroundColor?: string,
-  color?: string,
+  label: string
+  ariaLabel: string
+  handler: () => void
+  backgroundColor?: string
+  color?: string
   disabled?: boolean
-};
+}
 
 type Props = {
-  header: string,
-  content: ReactElement<{}>,
-  actions?: ButtonProps[],
+  header: string
+  content: ReactElement
+  actions?: ButtonProps[]
   handleCloseButton: () => void
-};
+}
 
 /*
 
@@ -25,22 +25,22 @@ type Props = {
 
 */
 
-
 const Modal: React.FC<Props> = ({
   header,
   content,
   actions,
-  handleCloseButton
+  handleCloseButton,
 }) => {
-  return(
+  return (
     <div className="fe-wallet__modal">
       <div className="fe-wallet__modal__content">
         <div className="fe-wallet__modal__content__header">
           <h2>{header}</h2>
           <span
-            className="fe-wallet__modal__content__header__close" 
-            onClick={handleCloseButton}>
-              &times;
+            className="fe-wallet__modal__content__header__close"
+            onClick={handleCloseButton}
+          >
+            &times;
           </span>
         </div>
         <div className="fe-wallet__modal__content__body">
@@ -48,24 +48,25 @@ const Modal: React.FC<Props> = ({
             {content}
           </div>
           <div className="fe-wallet__modal__content__body__buttons">
-            { actions?.map( action => 
+            {actions?.map(action => (
               <button
                 key={action.ariaLabel}
-                aria-label={action.ariaLabel} 
+                aria-label={action.ariaLabel}
                 onClick={action.handler}
                 disabled={action.disabled}
                 style={{
                   backgroundColor: action.backgroundColor,
-                  color: action.color
-                }}>
+                  color: action.color,
+                }}
+              >
                 {action.label}
-              </button>  
-            )}
+              </button>
+            ))}
           </div>
         </div>
       </div>
     </div>
   )
-};
+}
 
-export default Modal;
+export default Modal

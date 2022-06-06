@@ -1,19 +1,23 @@
 import { BalanceType, CurrencyType, RateType } from '../utils/type'
 import { ENDPOINTS } from '../utils/constants'
-const axios = require('axios').default
+import axios from 'axios'
+
+type responseTypeVal = RateType[] | CurrencyType[] | BalanceType[]
 
 type responseType = {
-    data: RateType[] | CurrencyType[] | BalanceType[]
+  data: responseTypeVal
 }
 
-const requestHandler = async (url: string): Promise<any> => {
-    const { BASE_URL, EXT } = ENDPOINTS
-    return new Promise((resolve, reject) =>
-        axios
-            .get(`${BASE_URL}${url}${EXT}`)
-            .then((response: responseType) => resolve(response?.data))
-            .catch((err: any) => reject(err)),
-    )
+const requestHandler = async (
+  url: string,
+): Promise<RateType[] | CurrencyType[] | BalanceType[]> => {
+  const { BASE_URL, EXT } = ENDPOINTS
+  return new Promise((resolve, reject) =>
+    axios
+      .get(`${BASE_URL}${url}${EXT}`)
+      .then((response: responseType) => resolve(response?.data))
+      .catch((err: string) => reject(err)),
+  )
 }
 
 export { requestHandler }

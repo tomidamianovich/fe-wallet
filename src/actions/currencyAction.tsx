@@ -4,7 +4,7 @@ import { CurrencyType, CurrencyAction } from '../utils/type'
 export function setCurrenciesData(payload: CurrencyType[]) {
   const action: CurrencyAction = {
     type: SET_CURRENCY,
-    payload
+    payload,
   }
   return action
 }

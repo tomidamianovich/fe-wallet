@@ -1,66 +1,64 @@
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import BalanceSummary from '../index';
-import { balances, fiatCurrencies, currencies } from '../../../utils/tests';
-import currentBalanceReducer from "../../../reducers/currentBalanceReducer"
-import { Provider } from 'react-redux';
-import { createStore } from "redux";
+import { ComponentType } from 'react'
+import { render, screen, fireEvent, waitFor } from '@testing-library/react'
+import BalanceSummary from '../index'
+import { balances, fiatCurrencies, currencies } from '../../../utils/tests'
+import currentBalanceReducer from '../../../reducers/currentBalanceReducer'
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
 
-const store = createStore(currentBalanceReducer);
+const store = createStore(currentBalanceReducer)
 
 jest.mock('react-i18next', () => ({
-  withTranslation: () => (Component: any) => {
-    Component.defaultProps = {...Component.defaultProps, t: (translation: string) => translation};
-    return Component;
-  }
-}));
+  withTranslation: () => (Component: ComponentType) => {
+    Component.defaultProps = {
+      ...Component.defaultProps,
+      t: (translation: string) => translation,
+    }
+    return Component
+  },
+}))
 
 test('renders BalanceSummary with balances', () => {
   const { asFragment } = render(
     <Provider store={store}>
-      <BalanceSummary 
-        balances={balances}
-        currencies={currencies}
-      />
-    </Provider>
-  );
-  expect(asFragment()).toMatchSnapshot();
-});
+      <BalanceSummary balances={balances} currencies={currencies} />
+    </Provider>,
+  )
+  expect(asFragment()).toMatchSnapshot()
+})
 
 test('renders BalanceSummary with balances and switching between currencies', async () => {
   render(
     <Provider store={store}>
-      <BalanceSummary 
-        balances={balances}
-        currencies={fiatCurrencies}
-      />
-    </Provider>
-  );
-  
-  const currencySelector = screen.getByRole('combobox', { name: "balance.summary.dropdown.aria_label" });
-  expect(currencySelector).toBeInTheDocument();
-  expect(currencySelector).toHaveValue("0");
-  expect(currencySelector).toHaveDisplayValue("ARS");
+      <BalanceSummary balances={balances} currencies={fiatCurrencies} />
+    </Provider>,
+  )
 
-  const currencySelectorArs = screen.getByRole('option', { name: "ARS" });
-  const currencySelectorUsd = screen.getByRole('option', { name: "USD" });
-  expect(currencySelectorArs).toHaveValue("0");
-  expect(currencySelectorUsd).toHaveValue("1");
+  const currencySelector = screen.getByRole('combobox', {
+    name: 'balance.summary.dropdown.aria_label',
+  })
+  expect(currencySelector).toBeInTheDocument()
+  expect(currencySelector).toHaveValue('0')
+  expect(currencySelector).toHaveDisplayValue('ARS')
 
-  expect(currencySelector).toHaveValue("0");
+  const currencySelectorArs = screen.getByRole('option', { name: 'ARS' })
+  const currencySelectorUsd = screen.getByRole('option', { name: 'USD' })
+  expect(currencySelectorArs).toHaveValue('0')
+  expect(currencySelectorUsd).toHaveValue('1')
 
-  fireEvent.change(currencySelector, { target: { value: "1" }});
+  expect(currencySelector).toHaveValue('0')
+
+  fireEvent.change(currencySelector, { target: { value: '1' } })
   await waitFor(() => {
-    expect(currencySelector).toHaveValue("1");
-    expect(currencySelector).toHaveDisplayValue("USD");
-    expect(screen.findByDisplayValue("U$S")).toBeTruthy();
-  });
+    expect(currencySelector).toHaveValue('1')
+    expect(currencySelector).toHaveDisplayValue('USD')
+    expect(screen.findByDisplayValue('U$S')).toBeTruthy()
+  })
 
-  fireEvent.change(currencySelector, { target: { value: "0" }});
+  fireEvent.change(currencySelector, { target: { value: '0' } })
   await waitFor(() => {
-    expect(currencySelector).toHaveValue("0");
-    expect(currencySelector).toHaveDisplayValue("ARS");
-    expect(screen.findByDisplayValue("$")).toBeTruthy();
-  });
-  
-});
-
+    expect(currencySelector).toHaveValue('0')
+    expect(currencySelector).toHaveDisplayValue('ARS')
+    expect(screen.findByDisplayValue('$')).toBeTruthy()
+  })
+})
