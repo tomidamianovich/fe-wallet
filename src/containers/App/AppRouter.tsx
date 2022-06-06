@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navigation from '../../components/Navigation';
 import Header from '../../components/Header';
 import {
@@ -26,14 +26,13 @@ export default function AppRouter() {
         <Suspense fallback={<LoadingMessage />}>
           <Navigation links={navLinks} />
           <Routes>
-            <Route path="/panel"  element={<Panel />} />
+            <Route path="/"  element={<Panel />} />
+            <Route path="/fe-wallet"  element={<Panel />} />
             <Route path="/wallet" element={<Wallet />} />
             <Route path="/market-rates" element={<MarketRates />} />
             <Route path="/credit" element={<Credit />} />
             <Route path="/exchange" element={<Exchange />} />
             <Route path="/launchpad" element={<Launchpad />} />
-            <Route path="/fe-wallet" element={<Navigate to="/panel" />}/>  
-            <Route path="/" element={<Navigate to="/panel" />}/>  
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

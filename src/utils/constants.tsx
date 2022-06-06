@@ -92,7 +92,7 @@ type Link = {
 const NAV_LINKS:Link[] = [
   {
     name: 'Panel',
-    to: 'panel',
+    to: '/fe-wallet',
     icon: 'panel'
   },
   {
