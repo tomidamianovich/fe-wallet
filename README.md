@@ -36,9 +36,9 @@ It will create a deploy via action on github pages.
 
 ### 4) Navigate to:
 
-```
-  Navigate to https://github.com/tomidamianovich/fe-wallet
-```
+
+> [https://tomidamianovich.github.io/fe-wallet/](https://tomidamianovich.github.io/fe-wallet/)
+
 
 ### 5) Testing
 
