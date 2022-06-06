@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/fe-wallet/static/css/main.c55298e3.css",
-    "main.js": "/fe-wallet/static/js/main.0636db5b.js",
+    "main.js": "/fe-wallet/static/js/main.e75cfe6d.js",
     "static/js/787.a9105d89.chunk.js": "/fe-wallet/static/js/787.a9105d89.chunk.js",
     "static/media/Lato-Light.ttf": "/fe-wallet/static/media/Lato-Light.c7400fcad9e48ca9043f.ttf",
     "static/media/Lato-Regular.ttf": "/fe-wallet/static/media/Lato-Regular.9d883d540ee2b4de8024.ttf",
@@ -10,11 +10,11 @@
     "static/media/logo-brand.svg": "/fe-wallet/static/media/logo-brand.a18f53d094103d8ebee0c1b7ac80c5b1.svg",
     "index.html": "/fe-wallet/index.html",
     "main.c55298e3.css.map": "/fe-wallet/static/css/main.c55298e3.css.map",
-    "main.0636db5b.js.map": "/fe-wallet/static/js/main.0636db5b.js.map",
+    "main.e75cfe6d.js.map": "/fe-wallet/static/js/main.e75cfe6d.js.map",
     "787.a9105d89.chunk.js.map": "/fe-wallet/static/js/787.a9105d89.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c55298e3.css",
-    "static/js/main.0636db5b.js"
+    "static/js/main.e75cfe6d.js"
   ]
 }
