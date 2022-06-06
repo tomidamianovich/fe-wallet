@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
-import { useEffect } from 'react';
-import { BalanceType, CurrencyType, CombinedState } from '../../utils/type';
-import './styles/index.scss';
-import Dropdown from '../Dropdown';
-import { useDispatch, useSelector } from 'react-redux';
-import { setCurrencyBalanceData } from "../../actions/currencyBalanceAction";
-import { withTranslation, WithTranslation } from 'react-i18next';
+import React, { useState } from 'react'
+import { useEffect } from 'react'
+import { BalanceType, CurrencyType, CombinedState } from '../../utils/type'
+import './styles/index.scss'
+import Dropdown from '../Dropdown'
+import { useDispatch, useSelector } from 'react-redux'
+import { setCurrencyBalanceData } from '../../actions/currencyBalanceAction'
+import { withTranslation, WithTranslation } from 'react-i18next'
 
 type Props = {
-  balances: BalanceType[],
+  balances: BalanceType[]
   currencies: CurrencyType[]
-} & WithTranslation;
+} & WithTranslation
 
 /*
 
@@ -22,54 +22,59 @@ type Props = {
 
 */
 
-const BalanceSummary: React.FC<Props> = ({
-  balances,
-  currencies,
-  t
-}) => {
-  const dispatch = useDispatch();
-  const currentBalance:BalanceType  = useSelector((state:CombinedState) => state.CurrentBalanceReducer);
-  const [currentCurrencyIndex, setCurrentCurrencyIndex] = useState<number>(0);
+const BalanceSummary: React.FC<Props> = ({ balances, currencies, t }) => {
+  const dispatch = useDispatch()
+  const currentBalance: BalanceType = useSelector(
+    (state: CombinedState) => state.CurrentBalanceReducer,
+  )
+  const [currentCurrencyIndex, setCurrentCurrencyIndex] = useState<number>(0)
 
-  useEffect(()=> {
+  useEffect(() => {
     if (!currentBalance?.ticker) {
-      dispatch(setCurrencyBalanceData(balances[0]));
+      dispatch(setCurrencyBalanceData(balances[0]))
       return
-    } 
-    const currencyIndex = currencies.findIndex(currency => currency.ticker === currentBalance.ticker);
-    currencyIndex >= 0 && setCurrentCurrencyIndex(currencyIndex);
-  }, [currentBalance,currencies, balances, dispatch]);
-
+    }
+    const currencyIndex = currencies.findIndex(
+      currency => currency.ticker === currentBalance.ticker,
+    )
+    currencyIndex >= 0 && setCurrentCurrencyIndex(currencyIndex)
+  }, [currentBalance, currencies, balances, dispatch])
 
   const handlerDropdown = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const currencyIndex = parseInt(e.target.value);
-    const balance = balances.find(balance => balance.ticker === currencies[currencyIndex].ticker);
+    const currencyIndex = parseInt(e.target.value)
+    const balance = balances.find(
+      balance => balance.ticker === currencies[currencyIndex].ticker,
+    )
     if (!balance) return
-    setCurrentCurrencyIndex(currencyIndex);
-    dispatch(setCurrencyBalanceData(balance));
-  };
-
-  const getFormattedAmount = (amount: number, decimals: number):string => {
-    return (Math.round(amount * 100) / 100).toFixed(decimals);
+    setCurrentCurrencyIndex(currencyIndex)
+    dispatch(setCurrencyBalanceData(balance))
   }
 
-  return(
+  const getFormattedAmount = (amount: number, decimals: number): string => {
+    return (Math.round(amount * 100) / 100).toFixed(decimals)
+  }
+
+  return (
     <div className="fe-wallet__balance">
       <span className="fe-wallet__balance__symbol">
-        { currencies[currentCurrencyIndex]?.symbol }
+        {currencies[currentCurrencyIndex]?.symbol}
       </span>
       <span className="fe-wallet__balance__amount-desc">
-        { getFormattedAmount(currentBalance?.amount, currencies[currentCurrencyIndex]?.decimals ) }
+        {getFormattedAmount(
+          currentBalance?.amount,
+          currencies[currentCurrencyIndex]?.decimals,
+        )}
       </span>
       <Dropdown
-        name="balance" 
-        handler={handlerDropdown} 
-        options={currencies} 
+        name="balance"
+        handler={handlerDropdown}
+        options={currencies}
         selectedIndex={currentCurrencyIndex}
         ariaLabel={t('balance.summary.dropdown.aria_label')}
         className="fe-wallet__dropdown__balance"
       />
-    </div>  
-)};
+    </div>
+  )
+}
 
-export default withTranslation()(BalanceSummary);
+export default withTranslation()(BalanceSummary)

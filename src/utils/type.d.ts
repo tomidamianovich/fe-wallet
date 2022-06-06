@@ -13,7 +13,7 @@ export type CurrencyType = {
     image_svg: string
   }
   color: string | null
-  categories: any[]
+  categories: string[]
   is_favorite: boolean
 }
 
@@ -73,7 +73,19 @@ export interface transactionStatus {
   ['SUCCESS']: TransactionStatusType
 }
 
-export type NavLinkType = any
+export type Link = {
+  name: string
+  to: string
+  icon: string
+}
+
+export type EventSelect = {
+  target: {
+    value: TransactionActionType
+  }
+}
+
+export type NavLinkType = link
 
 export type CurrencyState = CurrencyType[]
 export type RateState = RateType[]
@@ -82,7 +94,7 @@ export type BalanceState = BalanceType[]
 export type TransactionState = TransactionType[]
 
 export type CurrencyAction = {
-  type: string
+  type: strings
   payload: CurrencyState
 }
 

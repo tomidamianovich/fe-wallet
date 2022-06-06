@@ -30,9 +30,17 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.27.1",
+    "@typescript-eslint/parser": "^5.27.1",
     "env-cmd": "^10.1.0",
+    "eslint": "^8.17.0",
+    "eslint-plugin-react": "^7.30.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.0",
+    "prettier": "^2.6.2",
     "react-scripts": "5.0.1",
-    "sass": "^1.52.1"
+    "sass": "^1.52.1",
+    "tsc-files": "^1.1.3"
   },
   "scripts": {
     "start": "npm run start:prod",
@@ -45,7 +53,18 @@
     "start:dev": "env-cmd -f ./.dev.env react-scripts start",
     "build:dev": "env-cmd -f ./.dev.env npm run-script build",
     "start:prod": "env-cmd -f ./.prod.env react-scripts start",
-    "build:prod": "env-cmd -f ./.prod.env npm run-script build"
+    "build:prod": "env-cmd -f ./.prod.env npm run-script build",
+    "lint": "eslint src --color",
+    "prettier": "prettier src -check",
+    "husky-install": "husky install",
+    "lint-staged": "lint-staged --config lint-staged.js",
+    "typescript": "tsc --project tsconfig.json --noEmit"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm test",
+      "pre-push": "npm run lint && npm test"
+    }
   },
   "eslintConfig": {
     "extends": [

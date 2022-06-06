@@ -1,6 +1,6 @@
 import { ComponentType } from 'react'
 import { render } from '@testing-library/react'
-import MaintenancePage from '../index'
+import Credit from '..'
 import navLinkReducer from '../../../reducers/navLinkReducer'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
@@ -17,19 +17,10 @@ jest.mock('react-i18next', () => ({
   },
 }))
 
-test('renders MaintenancePage with name', () => {
+test('renders Credit main page', () => {
   const { asFragment } = render(
     <Provider store={store}>
-      <MaintenancePage pageName="wallet" />
-    </Provider>,
-  )
-  expect(asFragment()).toMatchSnapshot()
-})
-
-test('renders MaintenancePage with name', () => {
-  const { asFragment } = render(
-    <Provider store={store}>
-      <MaintenancePage pageName="" />
+      <Credit />
     </Provider>,
   )
   expect(asFragment()).toMatchSnapshot()

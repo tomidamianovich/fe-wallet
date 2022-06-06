@@ -1,4 +1,4 @@
-@import "../../../containers/App/styles/colours.scss";
+@import '../../../containers/App/styles/colours.scss';
 
 .fe-wallet__spinner-container {
   display: flex;
@@ -12,7 +12,7 @@
     border-radius: 50%;
     animation: spinner 1.5s linear infinite;
   }
-  
+
   @keyframes spinner {
     0% {
       transform: rotate(0deg);

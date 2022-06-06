@@ -1,4 +1,4 @@
-@import "../../../containers/App/styles/colours.scss";
+@import '../../../containers/App/styles/colours.scss';
 
 .fe-wallet__balance {
   display: flex;
@@ -11,7 +11,7 @@
   &__symbol {
     margin-right: 0.125rem;
   }
-  
+
   &__amount-desc {
     margin-right: 0.0625rem;
     font-size: 21px;

@@ -4,7 +4,7 @@ import { RateType, RateAction } from '../utils/type'
 export function setRatesData(payload: RateType[]) {
   const action: RateAction = {
     type: SET_RATE,
-    payload
+    payload,
   }
   return action
 }

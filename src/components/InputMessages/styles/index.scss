@@ -1,5 +1,4 @@
-
-@import "../../../containers/App/styles/colours.scss";
+@import '../../../containers/App/styles/colours.scss';
 
 .fe-wallet__input {
   text-align: left;
@@ -10,11 +9,11 @@
     text-align: left;
     padding: 1rem 0;
     display: flex;
-    
+
     &__label {
       font-size: 13px;
       padding: 0;
-      margin-right: .5rem;
+      margin-right: 0.5rem;
       text-align: left;
     }
   }

@@ -1,4 +1,4 @@
-@import "../../../containers/App/styles/colours.scss";
+@import '../../../containers/App/styles/colours.scss';
 
 select.fe-wallet__dropdown {
   border: 1px solid $primary-background-color;
@@ -7,7 +7,7 @@ select.fe-wallet__dropdown {
   &:focus-visible {
     outline: none !important;
   }
-  
+
   &__balance {
     font-size: 11px;
     color: $secondary-text-color;

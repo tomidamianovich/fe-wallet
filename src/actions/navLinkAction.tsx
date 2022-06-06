@@ -4,7 +4,7 @@ import { NavLinkType, NavLinkAction } from '../utils/type'
 export function setNavLinks(payload: NavLinkType[]) {
   const action: NavLinkAction = {
     type: SET_NAV_LINKS,
-    payload
+    payload,
   }
   return action
 }

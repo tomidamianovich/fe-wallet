@@ -1,4 +1,4 @@
-@import "../../../containers/App/styles/colours.scss";
+@import '../../../containers/App/styles/colours.scss';
 
 .fe-wallet__transactions {
   text-align: left;
@@ -13,34 +13,34 @@
 
   &__container {
     background: $secondary-base-color;
-    margin: 1rem  auto;
+    margin: 1rem auto;
     table {
       width: 95%;
-      border-collapse:collapse;
+      border-collapse: collapse;
       text-align: center;
-      
+
       tr {
         color: $primary-text-color;
         font-weight: 400;
-  
+
         &:not(:last-child) {
           border-bottom: 1px solid $primary-border-color;
         }
-        
       }
-  
+
       td {
         background: $secondary-base-color;
         border: none;
-        color: $primary-text-color
+        color: $primary-text-color;
       }
-  
+
       th {
         color: $secondary-text-color;
         font-weight: 400;
       }
-  
-      tr, td {
+
+      tr,
+      td {
         height: 64px;
         font-size: 16px;
         line-height: 16px;
@@ -48,7 +48,6 @@
         word-wrap: break-word;
         max-width: 150px;
       }
-  
     }
   }
 }

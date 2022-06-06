@@ -1,9 +1,9 @@
-import React from 'react';
-import MaintenancePage from "../../components/MaintenancePage";
-import { withTranslation, WithTranslation } from 'react-i18next';
-import './styles/index.scss';
+import React from 'react'
+import MaintenancePage from '../../components/MaintenancePage'
+import { withTranslation, WithTranslation } from 'react-i18next'
+import './styles/index.scss'
 
-type Props = WithTranslation;
+type Props = WithTranslation
 
 /*
 
@@ -13,10 +13,9 @@ type Props = WithTranslation;
     
 */
 
-const Launchpad: React.FC<Props> = ({ t }) => 
+const Launchpad: React.FC<Props> = ({ t }) => (
   <div className="fe-wallet__launchpad">
     <MaintenancePage pageName={t('pages.launchpad')} />
   </div>
-;
-
-export default withTranslation()(Launchpad);
+)
+export default withTranslation()(Launchpad)
