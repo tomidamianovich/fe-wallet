@@ -70,6 +70,7 @@ const Converter: React.FC<Props> = ({
             name={t('converter.from.input.name')}
             onChange={handlerFromAmount} 
             defaultValue={0} 
+            min={0}
             aria-label={t('converter.from.input.aria_label')}
           />
         </div>
