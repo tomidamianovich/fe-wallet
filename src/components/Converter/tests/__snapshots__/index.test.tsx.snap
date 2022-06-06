@@ -48,6 +48,7 @@ exports[`renders Converter  with currencies and rates 1`] = `
       <input
         aria-label="converter.from.input.aria_label"
         class="fe-wallet__converter__input"
+        min="0"
         name="converter.from.input.name"
         type="number"
         value="0"
@@ -146,6 +147,7 @@ exports[`renders Converter  without currencies and rates 1`] = `
       <input
         aria-label="converter.from.input.aria_label"
         class="fe-wallet__converter__input"
+        min="0"
         name="converter.from.input.name"
         type="number"
         value="0"
