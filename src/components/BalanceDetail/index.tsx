@@ -18,6 +18,15 @@ type Props = {
 
 type BalanceWithCurrencyInfo = BalanceType & CurrencyType & { sell_rate: string } ;
 
+/*
+
+  Component Name: BalanceDetail
+  Usages: 
+    - Component that show balance detail.
+    - Generates the content needed to be showed in the modal for transacctions.
+
+*/
+
 const BalanceDetail: React.FC<Props> = ({
   balances,
   currencies,

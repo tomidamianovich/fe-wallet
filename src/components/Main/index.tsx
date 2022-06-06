@@ -14,6 +14,15 @@ type Props = {
   balances: BalanceType[]
 };
 
+/*
+
+  Component Name: Main
+  Usages: 
+    - Component that allow handles components Greeting, Converter, BalanceDetail.
+    - Spinner components is showed when isloading state is true
+
+*/
+
 const Main: React.FC<Props> = ({
     currencies, 
     rates,

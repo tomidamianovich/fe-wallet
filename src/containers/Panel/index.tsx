@@ -9,7 +9,15 @@ import MaintenancePage from "../../components/MaintenancePage"
 import { requestHandler } from '../../utils/axios';
 import Main from '../../components/Main';
 
-type Props = {} & WithTranslation;
+type Props = WithTranslation;
+
+/*
+
+  Component Name: Panel
+  Usages: 
+    - Panel Page
+    
+*/
 
 const Panel: React.FC<Props> = ({t}) => {
   const dispatch = useDispatch();

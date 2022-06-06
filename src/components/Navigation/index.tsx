@@ -13,6 +13,14 @@ type Props = {
   links: Link[];
 } & WithTranslation;
 
+/*
+
+  Component Name: Navigation
+  Usages: 
+    - Component that allows us to show navigation links in the left side of the app
+
+*/
+
 const Navigation: React.FC<Props> = ({ links, t }) => 
   <nav className="fe-wallet__content__navigation">
     { 

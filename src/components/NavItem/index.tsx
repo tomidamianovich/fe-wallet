@@ -9,6 +9,14 @@ type Props = {
   icon: string;
 };
 
+/*
+
+  Component Name: Navigation
+  Usages: 
+    - Component that shows navigation links in the left side of the app inside de navigation component
+
+*/
+
 const NavItem: React.FC<Props> = ({to, name, icon}) => 
   <li className='fe-wallet__content__navigation__list__item'>
     <NavLink 

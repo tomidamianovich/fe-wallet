@@ -14,6 +14,14 @@ type Props =
     handleAction: () => void
   } & WithTranslation;
 
+/*
+
+  Component Name: BalanceDetailCard
+  Usages: 
+    - Component that show balance detail cards.
+
+*/
+
 const BalanceDetailCard : React.FC<Props> = ({
   amount,
   name,

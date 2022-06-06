@@ -11,6 +11,15 @@ type Props = {
   currentBalance: BalanceType
 } & WithTranslation;
 
+/*
+
+  Component Name: InputMessages
+  Usages: 
+    - Component that allow using a input html component with extra features
+    - Type and errors handler for select element
+
+*/
+
 const InputMessages: React.FC<Props> = ({
   transactionWipCurrency,
   transactionAmount,

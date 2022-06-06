@@ -9,6 +9,14 @@ type Props = {
   isError?: boolean
 } & WithTranslation;
 
+/*
+
+  Component Name: MaintenancePage
+  Usages: 
+    - Component that allow handles maintenance and error app states
+
+*/
+
 const MaintenancePage: React.FC<Props> = ({
   pageName,
   isError = false,

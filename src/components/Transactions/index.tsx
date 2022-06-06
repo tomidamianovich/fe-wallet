@@ -4,9 +4,15 @@ import { useSelector } from 'react-redux';
 import { TransactionType, CombinedState } from '../../utils/type';
 import { TRANSACTIONS } from '../../utils/constants';
 
-type Props = {};
+/*
 
-const Transaction: React.FC<Props> = () => {
+  Component Name: Transaction
+  Usages: 
+    - Component that shows a table with all the transactions data
+    
+*/
+
+const Transaction: React.FC = () => {
   const transactions:TransactionType[] = useSelector((state:CombinedState) => state.TransactionsReducer);
   return(
     <div className="fe-wallet__transactions">

@@ -1,216 +1,216 @@
-import { RateType } from '../type';
+import { RateType } from '../type'
 
-const rates:RateType[] = [
+const rates: RateType[] = [
   {
-     "ticker":"DAI_ARS",
-     "buy_rate":"213.06",
-     "sell_rate":"202.65",
-     "variation":"-0.01"
+    ticker: 'DAI_ARS',
+    buy_rate: '213.06',
+    sell_rate: '202.65',
+    variation: '-0.01',
   },
   {
-     "ticker":"USDC_ARS",
-     "buy_rate":"211.10",
-     "sell_rate":"194.34",
-     "variation":"-0.01"
+    ticker: 'USDC_ARS',
+    buy_rate: '211.10',
+    sell_rate: '194.34',
+    variation: '-0.01',
   },
   {
-     "ticker":"BTC_USDC",
-     "buy_rate":"31382.235000",
-     "sell_rate":"29253.819168",
-     "variation":"2.98"
+    ticker: 'BTC_USDC',
+    buy_rate: '31382.235000',
+    sell_rate: '29253.819168',
+    variation: '2.98',
   },
   {
-     "ticker":"SLP_ARS",
-     "buy_rate":"1.25",
-     "sell_rate":"1.20",
-     "variation":"2.40"
+    ticker: 'SLP_ARS',
+    buy_rate: '1.25',
+    sell_rate: '1.20',
+    variation: '2.40',
   },
   {
-     "ticker":"BAT_ARS",
-     "buy_rate":"86.15",
-     "sell_rate":"82.30",
-     "variation":"4.61"
+    ticker: 'BAT_ARS',
+    buy_rate: '86.15',
+    sell_rate: '82.30',
+    variation: '4.61',
   },
   {
-     "ticker":"UBI_ARS",
-     "buy_rate":"4.53",
-     "sell_rate":"3.92",
-     "variation":"0.00"
+    ticker: 'UBI_ARS',
+    buy_rate: '4.53',
+    sell_rate: '3.92',
+    variation: '0.00',
   },
   {
-     "ticker":"DOT_ARS",
-     "buy_rate":"2190.87",
-     "sell_rate":"2072.39",
-     "variation":"1.49"
+    ticker: 'DOT_ARS',
+    buy_rate: '2190.87',
+    sell_rate: '2072.39',
+    variation: '1.49',
   },
   {
-     "ticker":"RPC_ARS",
-     "buy_rate":"2.0265",
-     "sell_rate":"1.8145",
-     "variation":"0.00"
+    ticker: 'RPC_ARS',
+    buy_rate: '2.0265',
+    sell_rate: '1.8145',
+    variation: '0.00',
   },
   {
-     "ticker":"BTC_ARS",
-     "buy_rate":"6416974.63",
-     "sell_rate":"6134124.93",
-     "variation":"2.85"
+    ticker: 'BTC_ARS',
+    buy_rate: '6416974.63',
+    sell_rate: '6134124.93',
+    variation: '2.85',
   },
   {
-     "ticker":"AAVE_ARS",
-     "buy_rate":"19934.30",
-     "sell_rate":"19033.59",
-     "variation":"2.98"
+    ticker: 'AAVE_ARS',
+    buy_rate: '19934.30',
+    sell_rate: '19033.59',
+    variation: '2.98',
   },
   {
-     "ticker":"SOL_ARS",
-     "buy_rate":"11259.45",
-     "sell_rate":"10653.55",
-     "variation":"4.47"
+    ticker: 'SOL_ARS',
+    buy_rate: '11259.45',
+    sell_rate: '10653.55',
+    variation: '4.47',
   },
   {
-     "ticker":"AXS_ARS",
-     "buy_rate":"4573.04",
-     "sell_rate":"4369.03",
-     "variation":"2.60"
+    ticker: 'AXS_ARS',
+    buy_rate: '4573.04',
+    sell_rate: '4369.03',
+    variation: '2.60',
   },
   {
-     "ticker":"CHZ_ARS",
-     "buy_rate":"26.24",
-     "sell_rate":"25.07",
-     "variation":"2.44"
+    ticker: 'CHZ_ARS',
+    buy_rate: '26.24',
+    sell_rate: '25.07',
+    variation: '2.44',
   },
   {
-     "ticker":"DOGE_ARS",
-     "buy_rate":"18.47",
-     "sell_rate":"17.30",
-     "variation":"1.81"
+    ticker: 'DOGE_ARS',
+    buy_rate: '18.47',
+    sell_rate: '17.30',
+    variation: '1.81',
   },
   {
-     "ticker":"ETH_USDC",
-     "buy_rate":"2109.650850",
-     "sell_rate":"1966.563850",
-     "variation":"3.19"
+    ticker: 'ETH_USDC',
+    buy_rate: '2109.650850',
+    sell_rate: '1966.563850',
+    variation: '3.19',
   },
   {
-     "ticker":"UNI_ARS",
-     "buy_rate":"1159.66",
-     "sell_rate":"1106.42",
-     "variation":"4.39"
+    ticker: 'UNI_ARS',
+    buy_rate: '1159.66',
+    sell_rate: '1106.42',
+    variation: '4.39',
   },
   {
-     "ticker":"USDT_ARS",
-     "buy_rate":"211.62",
-     "sell_rate":"202.27",
-     "variation":"0.01"
+    ticker: 'USDT_ARS',
+    buy_rate: '211.62',
+    sell_rate: '202.27',
+    variation: '0.01',
   },
   {
-     "ticker":"MANA_ARS",
-     "buy_rate":"234.32",
-     "sell_rate":"223.95",
-     "variation":"1.22"
+    ticker: 'MANA_ARS',
+    buy_rate: '234.32',
+    sell_rate: '223.95',
+    variation: '1.22',
   },
   {
-     "ticker":"ADA_ARS",
-     "buy_rate":"115.62",
-     "sell_rate":"112.80",
-     "variation":"2.28"
+    ticker: 'ADA_ARS',
+    buy_rate: '115.62',
+    sell_rate: '112.80',
+    variation: '2.28',
   },
   {
-     "ticker":"LTC_ARS",
-     "buy_rate":"15350.10",
-     "sell_rate":"14225.54",
-     "variation":"3.09"
+    ticker: 'LTC_ARS',
+    buy_rate: '15350.10',
+    sell_rate: '14225.54',
+    variation: '3.09',
   },
   {
-     "ticker":"LINK_ARS",
-     "buy_rate":"1553.27",
-     "sell_rate":"1482.63",
-     "variation":"3.82"
+    ticker: 'LINK_ARS',
+    buy_rate: '1553.27',
+    sell_rate: '1482.63',
+    variation: '3.82',
   },
   {
-     "ticker":"ETH_ARS",
-     "buy_rate":"431250.33",
-     "sell_rate":"412241.53",
-     "variation":"3.06"
+    ticker: 'ETH_ARS',
+    buy_rate: '431250.33',
+    sell_rate: '412241.53',
+    variation: '3.06',
   },
   {
-     "ticker":"XRP_ARS",
-     "buy_rate":"92.13",
-     "sell_rate":"86.37",
-     "variation":"1.92"
+    ticker: 'XRP_ARS',
+    buy_rate: '92.13',
+    sell_rate: '86.37',
+    variation: '1.92',
   },
   {
-     "ticker":"BTC_USD",
-     "buy_rate":"30290.18",
-     "sell_rate":"30290.18",
-     "variation":"2.85"
+    ticker: 'BTC_USD',
+    buy_rate: '30290.18',
+    sell_rate: '30290.18',
+    variation: '2.85',
   },
   {
-     "ticker":"ETH_USD",
-     "buy_rate":"2035.64",
-     "sell_rate":"2035.64",
-     "variation":"3.06"
+    ticker: 'ETH_USD',
+    buy_rate: '2035.64',
+    sell_rate: '2035.64',
+    variation: '3.06',
   },
   {
-     "ticker":"UNI_USD",
-     "buy_rate":"5.48",
-     "sell_rate":"5.47",
-     "variation":"4.56"
+    ticker: 'UNI_USD',
+    buy_rate: '5.48',
+    sell_rate: '5.47',
+    variation: '4.56',
   },
   {
-     "ticker":"LINK_USD",
-     "buy_rate":"7.33",
-     "sell_rate":"7.32",
-     "variation":"3.82"
+    ticker: 'LINK_USD',
+    buy_rate: '7.33',
+    sell_rate: '7.32',
+    variation: '3.82',
   },
   {
-     "ticker":"USDC_USD",
-     "buy_rate":"0.94",
-     "sell_rate":"0.94",
-     "variation":"0.00"
+    ticker: 'USDC_USD',
+    buy_rate: '0.94',
+    sell_rate: '0.94',
+    variation: '0.00',
   },
   {
-     "ticker":"AXS_USD",
-     "buy_rate":"21.64",
-     "sell_rate":"21.62",
-     "variation":"2.87"
+    ticker: 'AXS_USD',
+    buy_rate: '21.64',
+    sell_rate: '21.62',
+    variation: '2.87',
   },
   {
-     "ticker":"SLP_USD",
-     "buy_rate":"0.01",
-     "sell_rate":"0.01",
-     "variation":"0.00"
+    ticker: 'SLP_USD',
+    buy_rate: '0.01',
+    sell_rate: '0.01',
+    variation: '0.00',
   },
   {
-     "ticker":"DOGE_USD",
-     "buy_rate":"0.09",
-     "sell_rate":"0.09",
-     "variation":"11.11"
+    ticker: 'DOGE_USD',
+    buy_rate: '0.09',
+    sell_rate: '0.09',
+    variation: '11.11',
   },
   {
-     "ticker":"BAT_USD",
-     "buy_rate":"0.41",
-     "sell_rate":"0.41",
-     "variation":"4.88"
+    ticker: 'BAT_USD',
+    buy_rate: '0.41',
+    sell_rate: '0.41',
+    variation: '4.88',
   },
   {
-     "ticker":"MANA_USD",
-     "buy_rate":"1.11",
-     "sell_rate":"1.11",
-     "variation":"1.80"
+    ticker: 'MANA_USD',
+    buy_rate: '1.11',
+    sell_rate: '1.11',
+    variation: '1.80',
   },
   {
-     "ticker":"AAVE_USD",
-     "buy_rate":"94.10",
-     "sell_rate":"93.99",
-     "variation":"2.99"
+    ticker: 'AAVE_USD',
+    buy_rate: '94.10',
+    sell_rate: '93.99',
+    variation: '2.99',
   },
   {
-     "ticker":"MATIC_USD",
-     "buy_rate":"0.68",
-     "sell_rate":"0.68",
-     "variation":"4.41"
-  }
-];
+    ticker: 'MATIC_USD',
+    buy_rate: '0.68',
+    sell_rate: '0.68',
+    variation: '4.41',
+  },
+]
 
-export default rates;
+export default rates

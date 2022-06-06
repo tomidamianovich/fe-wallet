@@ -12,6 +12,16 @@ type Props = {
   currencies: CurrencyType[]
 } & WithTranslation;
 
+/*
+
+  Component Name: BalanceSummary
+  Usages: 
+    - Component that show balance total in the selected currency.
+    - Component that allows a user to switch between fiat currencies.
+    - Generates the update of all crypto currencies value with the selected currency.
+
+*/
+
 const BalanceSummary: React.FC<Props> = ({
   balances,
   currencies,
