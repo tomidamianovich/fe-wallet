@@ -9,7 +9,7 @@ type Props = {};
 const Header: React.FC<Props> = () => 
   <header className="fe-wallet__header">
     <div className='fe-wallet__header__logo-container'>
-      <NavLink to="/panel">
+      <NavLink to="/fe-wallet">
         <img src={logo} alt={"logo"} className="fe-wallet__header__logo-container__logo"/>
       </NavLink>
       <div className='fe-wallet__header__icons'>

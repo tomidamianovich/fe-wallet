@@ -12,9 +12,8 @@ exports[`renders App main page 1`] = `
         class="fe-wallet__header__logo-container"
       >
         <a
-          aria-current="page"
-          class="active"
-          href="/panel"
+          class=""
+          href="/fe-wallet"
         >
           <img
             alt="logo"

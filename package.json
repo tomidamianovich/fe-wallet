@@ -35,7 +35,7 @@
     "sass": "^1.52.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "npm run start:prod",
     "start-server": "json-server --watch db.json --port 3001",
     "build": "react-scripts build",
     "predeploy": "npm run build",

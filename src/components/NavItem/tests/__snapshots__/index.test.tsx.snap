@@ -7,7 +7,7 @@ exports[`renders NavItem main page 1`] = `
   >
     <a
       class="fe-wallet__content__navigation__list__item__link false"
-      href="/panel"
+      href="/fe-wallet"
     >
       <div
         class="fe-wallet__content__navigation__list__item__link__content"

@@ -10,7 +10,7 @@ exports[`renders Exchange main page 1`] = `
     >
       <a
         class=""
-        href="/panel"
+        href="/fe-wallet"
       >
         <img
           alt="logo"
