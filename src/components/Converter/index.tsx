@@ -10,6 +10,15 @@ type Props = {
   rates: RateType[]
 } & WithTranslation;
 
+/*
+
+  Component Name: Converter
+  Usages: 
+    - Component that allow a user to convert between currencies values.
+    - Component that allow a user to know fees in advanced before a purchase or swap.
+
+*/
+
 const Converter: React.FC<Props> = ({
     currencies, 
     rates,

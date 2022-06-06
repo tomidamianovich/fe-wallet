@@ -17,6 +17,15 @@ type Props = {
   handleCloseButton: () => void
 };
 
+/*
+
+  Component Name: Modal
+  Usages: 
+    - Component that allows us to use a general use custom modal
+
+*/
+
+
 const Modal: React.FC<Props> = ({
   header,
   content,

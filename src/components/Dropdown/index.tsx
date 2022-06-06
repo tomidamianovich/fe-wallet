@@ -12,6 +12,15 @@ type Props = {
   className?: string
 } & WithTranslation;
 
+/*
+
+  Component Name: Dropdown
+  Usages: 
+    - Component that allow using a select html component with extra features
+    - Type and errors handler for select element
+
+*/
+
 const Dropdown: React.FC<Props> = ({ 
   name,
   handler,

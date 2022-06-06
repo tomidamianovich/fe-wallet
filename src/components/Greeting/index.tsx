@@ -9,6 +9,14 @@ type Props = {
   currencies: CurrencyType[]
 };
 
+/*
+
+  Component Name: Greeting
+  Usages: 
+    - Component that allows an user to see a greeting message
+    - Component that shows BalanceSummary
+*/
+
 const Greeting: React.FC<Props> = ({
     balances,
     currencies

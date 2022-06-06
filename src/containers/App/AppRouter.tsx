@@ -14,6 +14,14 @@ import {
 import { NavLinkType, CombinedState } from '../../utils/type'
 import { useSelector } from 'react-redux';
 
+/*
+
+  Component Name: AppRouter
+  Usages: 
+    - Router using BrowserRouter
+    
+*/
+
 export default function AppRouter() {
   const navLinks:NavLinkType  = useSelector((state:CombinedState) => state.NavLinkReducer);
   

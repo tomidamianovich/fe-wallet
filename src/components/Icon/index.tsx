@@ -21,6 +21,15 @@ const icons: any = {
   'profile': 'M5.53858 28.1065C2.14635 25.1726 0 20.837 0 16C0 7.16344 7.16344 0 16 0C24.8366 0 32 7.16344 32 16C32 20.837 29.8537 25.1726 26.4614 28.1065C25.2648 23.4451 21.0347 20 16 20C10.9653 20 6.73524 23.4451 5.53858 28.1065ZM16 18.4C19.0928 18.4 21.6 15.8928 21.6 12.8C21.6 9.7072 19.0928 7.2 16 7.2C12.9072 7.2 10.4 9.7072 10.4 12.8C10.4 15.8928 12.9072 18.4 16 18.4Z'
 };
 
+/*
+
+  Component Name: Icon
+  Usages: 
+    - Component that allow us to easily use svg icons.
+    - Component that allows to generate icons with specific width and height
+    
+*/
+
 const Icon: React.FC<Props> = ({ icon, height = 16 , width = 15}) => 
   <svg width={width} height={height} viewBox={`0 0 ${width} ${height}`} xmlns="http://www.w3.org/2000/svg" className='icon' >
     <path fillRule="evenodd" clipRule="evenodd" d={icons[icon]} />
